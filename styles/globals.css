@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.card {
+		@apply block rounded-lg shadow-md;
+	}
+
+	.primary-button {
+		@apply bg-green-100 rounded py-2 px-4 shadow outline-none hover:bg-green-300 active:bg-green-100 uppercase text-black text-sm;
+	}
+
+	.newprimarybtn {
+		@apply bg-green-600 p-2 px-3 rounded-full text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out hover:bg-green-200 hover:text-emerald-600 active:bg-green-600 active:text-white;
+	}
+
+	.pagination {
+		@apply border-2 border-green-600 p-3 px-5 rounded-full text-green-600 font-bold w-fit uppercase text-sm transition duration-300 ease-in-out hover:bg-green-600 hover:text-white active:bg-white active:text-green-600;
+	}
+
+	.heading {
+		@apply font-bold uppercase text-emerald-800;
+	}
+
+	.default-button {
+		@apply hover:bg-green-600 p-2 px-3 rounded-full hover:text-white font-bold w-fit uppercase text-xs transition duration-300 ease-in-out bg-green-50 text-emerald-600 active:bg-green-50 active:text-emerald-600;
+	}
+
+	.alert-error {
+		@apply my-3 rounded-lg bg-red-100 p-3 text-red-700;
+	}
+
+	.alert-success {
+		@apply m-3 rounded-lg bg-red-100 p-3 text-green-700;
+	}
+
+	.alert-error {
+		@apply my-3 rounded-lg bg-red-100 p-3 text-red-700;
+	}
+
+	.alert-success {
+		@apply m-3 rounded-lg bg-red-100 p-3 text-green-700;
+	}
+
+	.dropdown-link {
+		@apply flex p-2 hover:bg-emerald-600;
+	}
+}
+
+body {
+	@apply bg-white text-[#292929] transition-all ease-out duration-300;
+	font-family: 'Poppins', 'Oswald', sans-serif;
+}
+
+/* 
+input {
+	@apply p-2 bg-stone-50 placeholder:text-gray-500 border-b-4 border-green-100/20 focus:border-green-400 focus:bg-green-50 placeholder:uppercase text-black outline-none focus:outline-none md:min-w-[300px] min-w-[200px] placeholder:text-sm;
+}
+
+input[type='radio'] {
+	@apply min-w-0 outline-none;
+}
+
+input[type='checkbox'] {
+	@apply min-w-[1.2rem] min-h-[1.2rem] lg:min-w-[1.5rem] lg:min-h-[1.5rem] outline-none;
+}
+
+select {
+	@apply p-2 text-green-400 outline-none bg-neutral-700 ring-green-700 transition ease-out duration-150 rounded-sm focus:border-2 focus:border-green-300 min-w-0;
+}
+
+a {
+	@apply text-green-100 hover:text-green-400 active:text-green-100 transition duration-300 ease-in-out;
+}
+ */

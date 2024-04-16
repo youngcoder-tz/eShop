@@ -73,10 +73,11 @@ img {
 	padding: 21px 0 21px;
 	transition: all ease-out .3s;
 	background: 0 0;
-	outline: none;
+	outline: 0;
+	border-radius: 0;
 
 	&:focus, &:active {
-		outline: none;
+		outline: 0;
 	}
 
 	&::placeholder {
@@ -1250,7 +1251,7 @@ footer {
 	}
 
 	@media (max-width: 900px) {
-		right: 5.25%;
+		right: 5.5%;
 	}
 
 	@media (min-width: 1390px) {

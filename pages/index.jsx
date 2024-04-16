@@ -51,9 +51,9 @@ function Home() {
 							<span className="ribbon">
 								<Image
 									alt="ribbon"
-									src={'/images/ribbon.png'}
-									width={1600}
-									height={778}
+									src={'/images/ribbon2.png'}
+									width={1362}
+									height={770}
 								/>
 							</span>
 						</div>

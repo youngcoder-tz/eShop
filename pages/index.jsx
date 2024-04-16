@@ -132,7 +132,12 @@ function Home() {
 						</p>
 
 						<div className="info-box">
-							<Image src="/images/customer1.jpg" width={300} height={300} />
+							<Image
+								alt="customer image"
+								src="/images/customer1.jpg"
+								width={300}
+								height={300}
+							/>
 
 							<div className="info">
 								<h4>KARLA LYNN</h4>
@@ -150,7 +155,12 @@ function Home() {
 						</p>
 
 						<div className="info-box">
-							<Image src="/images/customer2.jpg" width={300} height={300} />
+							<Image
+								alt="customer image"
+								src="/images/customer2.jpg"
+								width={300}
+								height={300}
+							/>
 
 							<div className="info">
 								<h4>TOMAS CAMPBELL</h4>

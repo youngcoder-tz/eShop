@@ -297,6 +297,12 @@ img {
 				animation-name: AuxZoomIn;
 				animation-fill-mode: both;
 				opacity: 0;
+
+				@media (min-width: 1300px) {
+					right: -110px;
+					width: 90%;
+					bottom: -50px;
+				}
 			}
 		}
 	}

@@ -59,7 +59,12 @@ export default ({ item, showPreview, setShowPreview }) => {
 							<span className="terms">
 								{category.map((item, index) => (
 									<>
-										<Link href={'#'}>{item}</Link>
+										<Link
+											href={`/shop?category=${item}`}
+											onClick={() => setShowPreview(false)}
+										>
+											{item}
+										</Link>
 										{index < category.length - 1 && ', '}
 									</>
 								))}

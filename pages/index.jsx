@@ -14,106 +14,99 @@ function Home() {
 	return (
 		<Layout title={'HOME'}>
 			{/* Hero */}
-			<section className="max-w-container">
-				<div className="hero">
-					<div className="container">
-						<div className="heading">
-							<h3>Be Confident</h3>
-							<h5>Wear Color</h5>
+			<section className="hero">
+				<div className="container">
+					<div className="heading">
+						<h3>Be Confident</h3>
+						<h5>Wear Color</h5>
 
-							<Link href={'/shop'} className="link-button">
-								ORDER NOW
-								{icons.arrowLight}
-							</Link>
-						</div>
+						<Link href={'/shop'} className="link-button">
+							ORDER NOW
+							{icons.arrowLight}
+						</Link>
+					</div>
 
-						<div className="images">
-							<span className="back">
-								<Image
-									alt="Spray Back"
-									src="/images/spray-back.png"
-									width={260}
-									height={550}
-								/>
-							</span>
-							<span className="front">
-								<Image
-									src="/images/spray-front.png"
-									alt="Spray front"
-									width={1600}
-									height={748}
-								/>
-							</span>
-							<span className="ribbon">
-								<Image
-									alt="ribbon"
-									src={'/images/ribbon2.png'}
-									width={1362}
-									height={770}
-								/>
-							</span>
-						</div>
+					<div className="images">
+						<span className="back">
+							<Image
+								alt="Spray Back"
+								src="/images/spray-back.png"
+								width={260}
+								height={550}
+							/>
+						</span>
+						<span className="front">
+							<Image
+								src="/images/spray-front.png"
+								alt="Spray front"
+								width={1600}
+								height={748}
+							/>
+						</span>
+						<span className="ribbon">
+							<Image
+								alt="ribbon"
+								src={'/images/ribbon2.png'}
+								width={1362}
+								height={770}
+							/>
+						</span>
 					</div>
 				</div>
 			</section>
 
 			{/* Featured */}
-			<section className="max-w-container">
-				<div className="featured">
-					<div className="card-1">
-						<span className="bg-overlay" />
-						<span className="text">
-							<h3 className="card-title">FEEL THE</h3>
-							<h5 className="card-subtitle">DIFFERENCE</h5>
+			<section className="featured">
+				<div className="card-1">
+					<span className="bg-overlay" />
+					<span className="text">
+						<h3 className="card-title">FEEL THE</h3>
+						<h5 className="card-subtitle">DIFFERENCE</h5>
 
-							<Link href="/product/skin-primer-1" className="link-button-dark">
+						<Link href="/product/skin-primer-1" className="link-button-dark">
+							ORDER NOW
+							{icons.arrowDark}
+						</Link>
+					</span>
+				</div>
+				<div className="card-2">
+					<div className="necklace">
+						<Image
+							alt="Necklace"
+							src="/images/necklace.jpg"
+							width={300}
+							height={300}
+						/>
+						<span className="text">
+							<h3 className="card-title">Women's</h3>
+							<h5 className="card-subtitle">Accessories</h5>
+
+							<Link href="/product/elegante-necklace" className="outlined-btn">
 								ORDER NOW
-								{icons.arrowDark}
 							</Link>
 						</span>
 					</div>
-					<div className="card-2">
-						<div className="necklace">
-							<Image
-								alt="Necklace"
-								src="/images/necklace.jpg"
-								width={300}
-								height={300}
-							/>
-							<span className="text">
-								<h3 className="card-title">Women's</h3>
-								<h5 className="card-subtitle">Accessories</h5>
+					<div className="watch">
+						<span className="text">
+							<h3 className="card-title">Men's</h3>
+							<h5 className="card-subtitle">Accessories</h5>
 
-								<Link
-									href="/product/elegante-necklace"
-									className="outlined-btn"
-								>
-									ORDER NOW
-								</Link>
-							</span>
-						</div>
-						<div className="watch">
-							<span className="text">
-								<h3 className="card-title">Men's</h3>
-								<h5 className="card-subtitle">Accessories</h5>
-
-								<Link href="/product/elegante-watch" className="outlined-btn">
-									ORDER NOW
-								</Link>
-							</span>
-							<Image
-								alt="Watch"
-								src="/images/watch.jpg"
-								width={300}
-								height={300}
-							/>
-						</div>
+							<Link href="/product/elegante-watch" className="outlined-btn">
+								ORDER NOW
+							</Link>
+						</span>
+						<Image
+							alt="Watch"
+							src="/images/watch.jpg"
+							width={300}
+							height={300}
+						/>
 					</div>
 				</div>
 			</section>
 
 			{/* Products */}
-			<section className="max-w-container">
+			<section>
 				<div className="heading">
 					<h5>Find Your Beauty Match</h5>
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>
@@ -123,7 +116,7 @@ function Home() {
 			</section>
 
 			{/* Testimonies */}
-			<section className="max-w-container testimonies">
+			<section className="testimonies">
 				<div className="heading">
 					<h5>What The Customers Say</h5>
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>

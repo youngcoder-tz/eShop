@@ -1,9 +1,4 @@
-/**
- * External dependencies
- */
-import Image from 'next/image';
-
-export default ({ variant, className, children, ...rest }) => {
+export default ({ variant = '', className = '', children, ...rest }) => {
 	className = `${className} ${variant}`;
 
 	return (

@@ -2,24 +2,16 @@
  * External dependencies
  */
 import Image from 'next/image';
-// import Link from 'next/link';
 
 /**
  * Internal dependencies
  */
-import { useState } from 'react';
 import { data } from '../utils';
-// import db from '../utils/db';
-import { Button, Footer, Header, ProductsList } from '../components';
+import { Button, ProductsList, Layout, Subscribe } from '../components';
 
 function Home() {
-	const [active, setActive] = useState(false);
-
 	return (
-		<>
-			{/* Header */}
-			<Header />
-
+		<Layout title={'HOME'}>
 			{/* Hero */}
 			<section className="max-w-container">
 				<div className="hero">
@@ -173,38 +165,8 @@ function Home() {
 			</section>
 
 			{/* Subscribe */}
-			<section className="max-w-container">
-				<div className="subscribe">
-					<div className="container">
-						<div className="heading">
-							<h3>Subscribe Now</h3>
-							<h5>Enjoy 25% Discount</h5>
-
-							<input
-								type="text"
-								placeholder="Your email address"
-								className="outlined-input"
-							/>
-							<Button variant="link-button">SUBMIT</Button>
-						</div>
-
-						<div className="image-container">
-							<span className="front">
-								<Image
-									src="/images/model-sub.png"
-									alt="Model"
-									width={867}
-									height={786}
-								/>
-							</span>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			{/* Footer */}
-			<Footer />
-		</>
+			<Subscribe />
+		</Layout>
 	);
 }
 

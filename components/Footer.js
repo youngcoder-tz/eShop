@@ -60,15 +60,15 @@ export default () => {
 
 						<div>
 							<p>
-								<Link href="#">Home</Link>
+								<Link href="/">Home</Link>
 							</p>
 
 							<p>
-								<Link href="#">Shop</Link>
+								<Link href="/shop">Shop</Link>
 							</p>
 
 							<p>
-								<Link href="#">Blog</Link>
+								<Link href="#">Favorites</Link>
 							</p>
 						</div>
 					</div>

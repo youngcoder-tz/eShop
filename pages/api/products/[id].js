@@ -1,4 +1,4 @@
-import db from '../../../utils/db';
+import { db } from '../../../utils';
 import Product from '../../../models/Product';
 
 export default async function handler(req, res) {

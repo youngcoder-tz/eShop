@@ -20,7 +20,7 @@ async function connect() {
 		.connect(process.env.MONGODB_URI)
 		.then(console.log('DB Connected Successfully'))
 		.catch((err) => console.log(err));
-	connection.isConnected = db.connection.readyState;
+	connection.isConnected = db?.connection?.readyState;
 }
 
 async function disconnect() {

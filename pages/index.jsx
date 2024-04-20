@@ -7,10 +7,11 @@ import Link from 'next/link';
 /**
  * Internal dependencies
  */
-import { data, icons } from '../utils';
+import { icons, db } from '../utils';
+import Product from '../models/Product';
 import { ProductsList, Layout, Subscribe } from '../components';
 
-function Home() {
+export default function Home({ products }) {
 	return (
 		<Layout title={'HOME'}>
 			{/* Hero */}
@@ -112,7 +113,7 @@ function Home() {
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>
 				</div>
 
-				<ProductsList products={data.productList.slice(0, 8)} />
+				<ProductsList products={products.slice(0, 8)} />
 			</section>
 
 			{/* Testimonies */}
@@ -177,4 +178,13 @@ function Home() {
 	);
 }
 
-export default Home;
+export async function getServerSideProps() {
+	await db.connect();
+	const products = await Product.find().lean();
+
+	return {
+		props: {
+			products: products.map(db.convertDocToObj),
+		},
+	};
+}

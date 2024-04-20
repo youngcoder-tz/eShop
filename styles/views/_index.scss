@@ -104,13 +104,16 @@ img {
 	}
 
 	&:hover {
+		color: #fff;
+
 		svg {
-			@apply scale-125;
+			transform: rotate(-45deg);
 		}
 	}
 }
 
-.link-button-dark {
+.link-button-dark,
+.link-button-dark:hover {
 	color: $black;
 }
 
@@ -187,6 +190,7 @@ img {
 			
 			h3, h5 {
 				font-family: 'oswald';
+				text-align: left;
 			}
 
 			h5 {
@@ -198,7 +202,9 @@ img {
 				margin: 0;
 			}
 
-			.text-button {
+			a {
+				display: block;
+				width: fit-content;
 				margin-top: 20px;
 			}
 
@@ -374,14 +380,16 @@ img {
 			transform: translateY(-50%);
 			left: 100px;
 
-			button {
-				margin-top: 20px;
+			a {
+				display: block;
+					margin-top: 2rem;
+					width: fit-content;
 			}
 
 			@media (max-width: 1024px) {
 				left: 40px;
 
-				button {
+				a {
 					margin-top: 10px;
 				}
 			}
@@ -412,12 +420,16 @@ img {
 				text-align: center;
 				margin: auto;
 
-				button {
+				a {
+					display: block;
 					margin-top: 2rem;
+					width: fit-content;
+					margin-left: auto;
+					margin-right: auto;
 				}
 
 				@media (max-width: 1024px) {
-					button {
+					a {
 						margin-top: 1.5rem;
 					}
 				}

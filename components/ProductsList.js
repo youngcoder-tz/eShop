@@ -33,7 +33,7 @@ export default ({ products = [] }) => {
 					return (
 						<div key={index} className="product">
 							<div className="product-img-preview">
-								<Link href="#" className="img-container">
+								<Link href={`/product/${slug}`} className="img-container">
 									<Image src={image} width={315} height={325} alt={name} />
 
 									{discount && (
@@ -66,7 +66,7 @@ export default ({ products = [] }) => {
 							</div>
 
 							<div className="main">
-								<Link href="#" className="name">
+								<Link href={`/product/${slug}`} className="name">
 									<h3>{name}</h3>
 								</Link>
 
@@ -76,7 +76,9 @@ export default ({ products = [] }) => {
 
 										return (
 											<Fragment key={categoryItem}>
-												<Link href="#">{categoryItem}</Link>
+												<Link href={`/shop?category=${categoryItem}`}>
+													{categoryItem}
+												</Link>
 												{!isLast && ', '}
 											</Fragment>
 										);

@@ -1,20 +1,25 @@
-import Layout from '../components/Layout';
-import db from '../utils/db';
-import Product from '../models/Product';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-
 /**
  * External dependencies
  */
 import { SlArrowRight } from 'react-icons/sl';
 import { Box, Slider } from '@mui/material';
 import { useState } from 'react';
+import { db } from '../utils';
+import Product from '../models/Product';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 /**
  * Internal dependencies
  */
-import { Button, Select, Subscribe, ProductsList } from '../components';
+import {
+	Button,
+	Select,
+	Subscribe,
+	ProductsList,
+	ProductHeader,
+	Layout,
+} from '../components';
 
 export default function Home({
 	products,
@@ -75,17 +80,7 @@ export default function Home({
 
 	return (
 		<Layout title="SHOP">
-			<header className="page-title-section">
-				<h1>Products</h1>
-
-				<div className="breadcrumbs">
-					<Link href={'/'}>Home</Link>
-
-					<SlArrowRight className="arrow" />
-
-					<Link href={'/shop'}>Products</Link>
-				</div>
-			</header>
+			<ProductHeader title={'Products'} />
 
 			<div className="sort-results">
 				<Select

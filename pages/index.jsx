@@ -2,12 +2,13 @@
  * External dependencies
  */
 import Image from 'next/image';
+import Link from 'next/link';
 
 /**
  * Internal dependencies
  */
-import { data } from '../utils';
-import { Button, ProductsList, Layout, Subscribe } from '../components';
+import { data, icons } from '../utils';
+import { ProductsList, Layout, Subscribe } from '../components';
 
 function Home() {
 	return (
@@ -20,7 +21,10 @@ function Home() {
 							<h3>Be Confident</h3>
 							<h5>Wear Color</h5>
 
-							<Button variant="link-button">ORDER NOW</Button>
+							<Link href={'/shop'} className="link-button">
+								ORDER NOW
+								{icons.arrowLight}
+							</Link>
 						</div>
 
 						<div className="images">
@@ -62,7 +66,10 @@ function Home() {
 							<h3 className="card-title">FEEL THE</h3>
 							<h5 className="card-subtitle">DIFFERENCE</h5>
 
-							<Button variant="link-button-dark">ORDER NOW</Button>
+							<Link href="/product/skin-primer-1" className="link-button-dark">
+								ORDER NOW
+								{icons.arrowDark}
+							</Link>
 						</span>
 					</div>
 					<div className="card-2">
@@ -77,7 +84,12 @@ function Home() {
 								<h3 className="card-title">Women's</h3>
 								<h5 className="card-subtitle">Accessories</h5>
 
-								<Button variant="outlined-btn">ORDER NOW</Button>
+								<Link
+									href="/product/elegante-necklace"
+									className="outlined-btn"
+								>
+									ORDER NOW
+								</Link>
 							</span>
 						</div>
 						<div className="watch">
@@ -85,7 +97,9 @@ function Home() {
 								<h3 className="card-title">Men's</h3>
 								<h5 className="card-subtitle">Accessories</h5>
 
-								<Button variant="outlined-btn">ORDER NOW</Button>
+								<Link href="/product/elegante-watch" className="outlined-btn">
+									ORDER NOW
+								</Link>
 							</span>
 							<Image
 								alt="Watch"

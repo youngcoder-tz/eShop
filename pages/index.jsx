@@ -107,7 +107,7 @@ function Home() {
 			</section>
 
 			{/* Products */}
-			<section className="max-w-container products">
+			<section className="max-w-container">
 				<div className="heading">
 					<h5>Find Your Beauty Match</h5>
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>

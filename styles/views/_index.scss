@@ -503,185 +503,6 @@ img {
 	}
 }
 
-.products-list {
-	animation-delay: 200ms;
-	animation-timing-function: cubic-bezier(.165,.84,.44,1);
-	animation-name: AuxFadeInUp;
-	animation-duration: 1s;
-	animation-fill-mode: both;
-	opacity: 0;
-
-	@apply grid grid-cols-1 sm:grid-cols-2;
-
-	@media (min-width: 996px) {
-		@apply grid-cols-3;
-	}
-
-	@media (min-width: 1200px) {
-		@apply grid-cols-4;
-	}
-
-	.product {
-		padding-bottom: 50px;
-		position: relative;
-		
-		max-width: 315px;
-		@apply mx-auto;
-
-		padding-left: 15px;
-		padding-right: 15px;
-		display: block;
-		width: 100%;
-
-		.img-container {
-			img {
-				border-radius: 20px;
-				transition: all .3s !important;
-	
-				animation-name: AuxFadeInPreloaded;
-				animation-duration: 400ms;
-				animation-fill-mode: both;
-				animation-timing-function: cubic-bezier(.25,.46,.45,.94);
-	
-				opacity: 1;
-			}
-	
-			.discount-percent {
-				position: absolute;
-				top: 20px;
-				display: flex;
-				flex-flow: row-reverse wrap;
-				left: 35px;
-				right: auto;
-	
-				width: 60px;
-				  height: 60px;
-				border-radius: 50%;
-				line-height: 60px;
-				text-align: center;
-				text-transform: uppercase;
-				z-index: 1;
-				font-size: 12px;
-				font-weight: 500;
-				letter-spacing: -.6px;
-				color: #fff;
-				background-color: $black;
-	
-				justify-content: center;
-			}
-
-			.actions {
-				position: absolute;
-				top: 220px;
-				left: 50%;
-				transform: translateX(-50%);
-				display: flex;
-				justify-content: center;
-				align-items: center;
-				padding: 10px 0;
-				gap: 20px;
-				transition: all .3s ease-in-out;
-				opacity: 0;
-
-				button {
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					padding: 0;
-					min-width: 44px;
-					min-height: 44px;
-					margin-top: 4px;
-					color: $black;
-
-					border-radius: 50px;
-					box-shadow: 0px 0px 0px 1px $black;
-
-					font-size: 1.1875em;
-				}
-			}
-
-			&:hover {
-				img {
-					box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-				}
-
-				.actions {
-					opacity: 1;
-				}
-			}
-		}
-
-		.main {
-			margin-top: 22px;
-			text-align: center;
-
-			.name, .categories {
-				padding: 10px 0;
-			}
-
-			.name {
-				color: $black;
-				font-size: 25px;
-				font-weight: 700;
-				text-transform: capitalize;
-				line-height: 1.3em;
-				letter-spacing: 0;
-
-				max-width: 60%;
-
-				font-family: 'oswald';
-			}
-
-			.categories {
-				font-size: 15px;
-				font-weight: 500;
-				text-transform: capitalize;
-				font-style: normal;
-				line-height: 1.5em;
-				letter-spacing: 3.75px;
-
-				max-width: 100%;
-
-				> a {
-					font-size: .875em;
-					color: #bbb;
-					letter-spacing: .18em;
-
-					font-weight: 500;
-					text-transform: uppercase;
-					font-style: normal;
-					line-height: 1.5em;
-
-					font-family: 'montserrat';
-				}
-			}
-
-			.price-container {
-				margin-top: 20px;
-				font-family: 'montserrat';
-
-				.price {
-					padding: .2em .3em;
-
-					font-size: 20px;
-					font-weight: 700;
-					line-height: 1.3em;
-					color: $black;
-				}
-
-				.discount-price {
-					font-size: 16px;
-					color: #d4d4d4;
-					margin-left: 5px;
-					font-weight: 700;
-  					line-height: 1.3em;
-					text-decoration: line-through;
-				}
-			}
-		}
-	}
-}
-
 .testimonies {
 	margin-top: 7rem;
 
@@ -1215,6 +1036,14 @@ footer {
 		gap: 40px;
 		flex-direction: column;
 		align-items: center;
+		margin-top: 3rem;
+
+			animation-delay: 300ms;
+	animation-timing-function: cubic-bezier(.165,.84,.44,1);
+	animation-name: AuxFadeInUp;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	opacity: 0;
 
 		a {
 			padding: 0 !important;
@@ -1296,6 +1125,387 @@ footer {
 
 		.arrow-up {
 			color: #fff;
+		}
+	}
+}
+
+.products-list {
+	animation-delay: 200ms;
+	animation-timing-function: cubic-bezier(.165,.84,.44,1);
+	animation-name: AuxFadeInUp;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	opacity: 0;
+
+	@apply grid grid-cols-1 sm:grid-cols-2;
+
+	@media (min-width: 996px) {
+		@apply grid-cols-3;
+	}
+
+	@media (min-width: 1200px) {
+		@apply grid-cols-4;
+	}
+
+	.product {
+		padding-bottom: 50px;
+		position: relative;
+		
+		max-width: 315px;
+		@apply mx-auto;
+
+		padding-left: 15px;
+		padding-right: 15px;
+		display: block;
+		width: 100%;
+
+		.img-container {
+			img {
+				border-radius: 20px;
+				transition: all .3s !important;
+	
+				animation-name: AuxFadeInPreloaded;
+				animation-duration: 400ms;
+				animation-fill-mode: both;
+				animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+	
+				opacity: 1;
+			}
+	
+			.discount-percent {
+				position: absolute;
+				top: 20px;
+				display: flex;
+				flex-flow: row-reverse wrap;
+				left: 35px;
+				right: auto;
+	
+				width: 60px;
+				  height: 60px;
+				border-radius: 50%;
+				line-height: 60px;
+				text-align: center;
+				text-transform: uppercase;
+				z-index: 1;
+				font-size: 12px;
+				font-weight: 500;
+				letter-spacing: -.6px;
+				color: #fff;
+				background-color: $black;
+	
+				justify-content: center;
+			}
+		}
+
+		.actions {
+			position: absolute;
+			top: 220px;
+			left: 50%;
+			transform: translateX(-50%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 10px 0;
+			gap: 20px;
+			transition: all .3s ease-in-out;
+			opacity: 0;
+
+			button {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 0;
+				min-width: 44px;
+				min-height: 44px;
+				margin-top: 4px;
+				color: $black;
+
+				border-radius: 50px;
+				box-shadow: 0px 0px 0px 1px $black;
+
+				font-size: 1.1875em;
+			}
+		}
+
+		.main {
+			margin-top: 22px;
+			text-align: center;
+
+			.name, .categories {
+				padding: 10px 0;
+			}
+
+			.name {
+				color: $black;
+				font-size: 25px;
+				font-weight: 700;
+				text-transform: capitalize;
+				line-height: 1.3em;
+				letter-spacing: 0;
+
+				max-width: 60%;
+
+				font-family: 'oswald';
+			}
+
+			.categories {
+				font-size: 15px;
+				font-weight: 500;
+				text-transform: capitalize;
+				font-style: normal;
+				line-height: 1.5em;
+				letter-spacing: 3.75px;
+
+				max-width: 100%;
+
+				> a {
+					font-size: .875em;
+					color: #bbb;
+					letter-spacing: .18em;
+
+					font-weight: 500;
+					text-transform: uppercase;
+					font-style: normal;
+					line-height: 1.5em;
+
+					font-family: 'montserrat';
+				}
+			}
+
+			.price-container {
+				margin-top: 20px;
+				font-family: 'montserrat';
+
+				.price {
+					padding: .2em .3em;
+
+					font-size: 20px;
+					font-weight: 700;
+					line-height: 1.3em;
+					color: $black;
+				}
+
+				.discount-price {
+					font-size: 16px;
+					color: #d4d4d4;
+					margin-left: 5px;
+					font-weight: 700;
+  					line-height: 1.3em;
+					text-decoration: line-through;
+				}
+			}
+		}
+
+		.product-img-preview {
+			&:hover {
+				img {
+					box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+				}
+
+				.actions {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+.product-preview {
+	position: fixed;
+	inset: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+
+	.content {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+
+		animation-delay: 200ms;
+		animation-timing-function: cubic-bezier(.165,.84,.44,1);
+		animation-name: AuxFadeInUp;
+		animation-duration: 1s;
+		animation-fill-mode: both;
+		opacity: 0;
+
+		.quicklook {
+			background-color: #fff;
+			position: relative;
+
+			.quicklook {
+				&-image {
+					position: relative;
+					float: left;
+					max-width: 50%;
+					overflow: hidden;
+					padding: 30px 0;
+					margin: 0 30px;
+					transition: all 700ms cubic-bezier(.77,0,.175,1) 200ms;
+
+					img {
+						animation-name: AuxFadeInPreloaded;
+						animation-duration: 400ms;
+						animation-fill-mode: both;
+						animation-timing-function: cubic-bezier(.25,.46,.45,.94);
+						will-change: background-color,opacity;
+						max-width: 100%;
+						height: auto;
+					}
+				}
+
+				&-summary {
+					position: relative;
+					max-width: 400px;
+					overflow: auto;
+					padding: 45px 30px 100px 0;
+					position: relative;
+					transition: all 1400ms cubic-bezier(.19,1,.22,1) 680ms;
+
+					.rating {
+						margin-bottom: 13px;
+						line-height: 2;
+						display: flex;
+  						align-items: center;
+						flex-wrap: wrap;
+						gap: 10px;
+
+						.css-ryrseu-MuiRating-root {
+							color: #D10D43;
+						}
+	
+						.count {
+							font-size: 17px;
+							font-weight: 400;
+							color: rgba(30,30,30,.5);
+							margin-left: 7px;
+							line-height: 2;
+						}
+					}
+
+					.title {
+						font-size: 25px;
+						line-height: 38px;
+						font-weight: 600;
+						margin: 0;
+						font-family: 'oswald';
+						letter-spacing: 0;
+					}
+
+					.price {
+						font-size: 30px;
+						font-weight: 400;
+						line-height: normal;
+						margin-top: 17px;
+						margin-bottom: 15px;
+						font-family: 'montserrat';
+
+						.discount-amount {
+							font-size: 22px;
+  							color: #bbb;
+							position: relative;
+							top: -3px;
+							margin-left: 20px;
+							text-decoration: line-through;
+						}
+					}
+
+					.description {
+						font-size: 15px;
+  						letter-spacing: 2.25px;
+						margin: 0 0 1em;
+						font-family: 'montserrat';
+						line-height: 1.5;
+ 	 					font-style: normal;
+					}
+
+					.categories {
+						margin-top: 27px;
+						margin-bottom: 15px;
+
+						h6 {
+							font-size: 1em;
+							line-height: 1;
+							font-weight: 600;
+							text-transform: capitalize;
+							margin-bottom: .2em;
+							color: #3d3d3d;
+						}
+
+						.terms {
+							margin-top: 5px;
+							font-size: 14px;
+							
+							a {
+								color: #bbb;
+								text-transform: uppercase;
+								transition: color 150ms linear;
+
+								&:hover {
+									color: #D10D43;
+								}
+							}
+						}
+					}
+
+					.actions {
+						margin-top: 5rem;
+						display: flex;
+						justify-content: space-between;
+						align-items: center;
+						flex-wrap: wrap;
+						gap: 10px;
+
+						.add-to-cart {
+							font-size: 15px;
+  							font-weight: 400;
+							padding: 14px 47px;
+							line-height: 100%;
+						}
+
+						.favorite {
+							color: #000;
+							transition: color 150ms linear;
+
+							&:hover {
+								color: #D10D43;
+							}
+						}
+					}
+				}
+			}
+
+			.close {
+				position: absolute;
+				top: 15px;
+				right: 20px;
+				font-size: 20px;
+				transition: color 150ms linear;
+				color: #000;
+
+				&:hover {
+					color: #D10D43;
+				}
+			}
+
+			@media screen  and (max-width: 970px) {
+				max-height: 90vh;
+				max-width: 90vw;
+				overflow: auto;
+
+				.quicklook {
+					&-image {
+						float: none;
+						max-width: 75%;
+					}
+
+					&-summary {
+						max-width: 600px;
+						padding: 30px;
+						margin-bottom: 60px;
+					}
+				}
+			}
 		}
 	}
 }

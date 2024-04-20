@@ -3,83 +3,107 @@
  */
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { FaPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
 
 /**
  * Internal dependencies
  */
 import Button from './Button';
+import ProductPreview from './ProductPreview';
 
 export default ({ products = [] }) => {
+	const [showPreview, setShowPreview] = useState(false);
+	const [currentItem, setCurrentItem] = useState({});
+
 	return (
-		<div className="products-list">
-			{products.map((item) => {
-				const {
-					image,
-					discount,
-					name,
-					slug,
-					priceDisplay,
-					priceDiscountedDisplay,
-					category,
-				} = item;
+		<>
+			<div className="products-list">
+				{products.map((item, index) => {
+					const {
+						image,
+						discount,
+						name,
+						slug,
+						priceDisplay,
+						priceDiscountedDisplay,
+						category,
+					} = item;
 
-				return (
-					<div key={slug} className="product">
-						<Link href="#" className="img-container">
-							<Image src={image} width={315} height={325} alt={name} />
+					return (
+						<div key={index} className="product">
+							<div className="product-img-preview">
+								<Link href="#" className="img-container">
+									<Image src={image} width={315} height={325} alt={name} />
 
-							{discount && (
-								<span className="discount-percent">
-									<span>{discount}</span>
-								</span>
-							)}
+									{discount && (
+										<span className="discount-percent">
+											<span>{discount}</span>
+										</span>
+									)}
+								</Link>
 
-							<div className="actions">
-								<Button title="Preview" className="preview">
-									<FaRegEye />
-								</Button>
+								<div className="actions">
+									<Button
+										onClick={() => {
+											setShowPreview(true);
+											setCurrentItem(item);
+										}}
+										title="Preview"
+										className="preview"
+									>
+										<FaRegEye />
+									</Button>
 
-								<Button title="Add to Favorites" className="favorite">
-									<FaRegHeart />
-								</Button>
+									<Button title="Add to Favorites" className="favorite">
+										<FaRegHeart />
+									</Button>
 
-								<Button title="Add to Cart" className="cart">
-									<FaPlus />
-								</Button>
+									<Button title="Add to Cart" className="cart">
+										<FaPlus />
+									</Button>
+								</div>
 							</div>
-						</Link>
-						<div className="main">
-							<Link href="#" className="name">
-								<h3>{name}</h3>
-							</Link>
 
-							<span className="categories">
-								{category.map((categoryItem, i) => {
-									const isLast = i === category.length - 1;
+							<div className="main">
+								<Link href="#" className="name">
+									<h3>{name}</h3>
+								</Link>
 
-									return (
-										<Fragment key={i}>
-											<Link href="#">{categoryItem}</Link>
-											{!isLast && ', '}
-										</Fragment>
-									);
-								})}
-							</span>
+								<span className="categories">
+									{category.map((categoryItem, i) => {
+										const isLast = i === category.length - 1;
 
-							<div className="price-container">
-								<span className="price">${priceDisplay}</span>
-								{priceDiscountedDisplay && (
-									<span className="discount-price">
-										{priceDiscountedDisplay}
-									</span>
-								)}
+										return (
+											<Fragment key={categoryItem}>
+												<Link href="#">{categoryItem}</Link>
+												{!isLast && ', '}
+											</Fragment>
+										);
+									})}
+								</span>
+
+								<div className="price-container">
+									<span className="price">${priceDisplay}</span>
+									{priceDiscountedDisplay && (
+										<span className="discount-price">
+											{priceDiscountedDisplay}
+										</span>
+									)}
+								</div>
 							</div>
 						</div>
-					</div>
-				);
-			})}
-		</div>
+					);
+				})}
+			</div>
+
+			{showPreview && (
+				<ProductPreview
+					item={currentItem}
+					showPreview={showPreview}
+					setShowPreview={setShowPreview}
+				/>
+			)}
+		</>
 	);
 };

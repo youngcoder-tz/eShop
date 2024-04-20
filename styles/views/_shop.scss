@@ -16,6 +16,10 @@
 	position: relative;
 	background-image: url("../../public/images/shop-header.jpg");
 
+	@media screen and (max-width: 430px) {
+		padding-left: 40px;
+	}
+
 	h1 {
 		font-size: 45px;
 		font-weight: 700;
@@ -77,7 +81,7 @@
 				&::after {
 					content: "";
 					position: absolute;
-					height: 180px;
+					bottom: 0;
 					width: 0.5px;
 					background-color: rgba(0, 0, 0, 0.20);
 					top: -1px;
@@ -171,6 +175,47 @@
 					color: #000;
 				}
 			}
+		}
+	}
+
+	@media screen and (max-width: 670px) {
+		flex-direction: column;
+
+		section {
+			width: 100%;
+
+			&.categories {
+				border-bottom: 1px solid rgba(0, 0, 0, 0.20);
+
+				ul {
+					&::after {
+						display: none;
+					}
+				}
+			}
+
+			&.prices {
+				margin-left: 0;
+				margin-top: 50px;
+			}
+		}
+	}
+
+	@media (min-width: 600px) and (max-width: 670px) {
+		section {
+			&.categories {
+				ul {
+					@apply grid grid-cols-2;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 600px) {
+		padding: 40px;
+
+		.css-1n9fze6 {
+			width: 100%;
 		}
 	}
 }

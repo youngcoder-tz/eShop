@@ -18,11 +18,11 @@ export default ({ children, title }) => (
 		</Head>
 
 		<ToastContainer
-			position="bottom-left"
+			position="top-right"
 			limit={3}
-			autoClose={2000}
+			autoClose={3000}
 			pauseOnFocusLoss={false}
-			theme={'dark'}
+			theme={'light'}
 		/>
 
 		<Header />

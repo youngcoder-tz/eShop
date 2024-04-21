@@ -96,10 +96,10 @@ const reducer = (state, action) => {
 	}
 };
 
-export function StoreProvider({ children }) {
+export const StoreProvider = ({ children }) => {
 	const [state, dispatch] = React.useReducer(reducer, initialState);
 
 	return (
 		<Store.Provider value={{ state, dispatch }}>{children}</Store.Provider>
 	);
-}
+};

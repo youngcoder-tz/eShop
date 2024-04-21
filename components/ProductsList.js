@@ -3,7 +3,7 @@
  */
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment, useState } from 'react';
+import { Fragment, useState, useContext } from 'react';
 import { FaPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
 
 /**
@@ -11,8 +11,10 @@ import { FaPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
  */
 import Button from './Button';
 import ProductPreview from './ProductPreview';
+import { addToCart, Store } from '../utils';
 
 export default ({ products = [] }) => {
+	const { state, dispatch } = useContext(Store);
 	const [showPreview, setShowPreview] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
 
@@ -59,7 +61,11 @@ export default ({ products = [] }) => {
 										<FaRegHeart />
 									</Button>
 
-									<Button title="Add to Cart" className="cart">
+									<Button
+										title="Add to Cart"
+										className="cart"
+										onClick={() => addToCart(item, state, dispatch)}
+									>
 										<FaPlus />
 									</Button>
 								</div>

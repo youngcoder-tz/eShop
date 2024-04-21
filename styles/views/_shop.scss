@@ -16,8 +16,9 @@
 	position: relative;
 	background-image: url("../../public/images/shop-header.jpg");
 
-	@media screen and (max-width: 430px) {
-		padding-left: 40px;
+	@media screen and (max-width: 600px) {
+		padding-left: 30px;
+		padding-right: 30px;
 	}
 
 	h1 {
@@ -40,9 +41,14 @@
 		display: flex;
 		gap: 8px;
 		align-items: center;
+		flex-wrap: wrap;
 
 		.arrow {
 			font-size: 10px;
+		}
+
+		a, svg {
+			flex-shrink: 0;
 		}
 	}
 }

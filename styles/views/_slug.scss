@@ -1,0 +1,156 @@
+.slug-content {
+	display: flex;
+	gap: 50px;
+
+	.quicklook {
+		&-image {
+			padding: 0;
+			margin: 0;
+
+			img {
+				border-radius: 20px;
+			}
+		}
+
+		&-summary {
+			max-width: 40%;
+			padding: 0;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			margin: 25px 0;
+			margin-left: 3rem;
+			overflow: visible;
+
+			@media (max-width: 990px) {
+				margin-left: 1rem;
+			}
+
+			.title, .price {
+				font-size: 35px;
+				font-weight: 700;
+				line-height: 1.4em;
+				letter-spacing: -.7px;
+			}
+
+			.price {
+				letter-spacing: -1.05px;
+			}
+
+			.actions {
+				margin-top: auto;
+				justify-content: flex-start;
+				gap: 1rem;
+				padding-top: 1rem;
+			}
+
+			.discount-percent {
+				width: 66px;
+  				height: 66px;
+
+				border-radius: 50%;
+				background-color: #000;
+				color: #fff;
+				text-align: center;
+				line-height: 66px;
+				text-transform: uppercase;
+				font-size: .75em;
+				font-weight: 600;
+
+				margin-top: -20px;
+				margin-bottom: 15px;
+			}
+		}
+	}
+
+	@media (max-width: 990px) {
+		flex-direction: column;
+
+		.quicklook {
+			&-image {
+				margin: 0 auto;
+				max-width: 100%;
+			}
+
+			&-summary {
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.product-description {
+	background-color: #F5f5f5;
+	border-radius: 20px;
+	padding: 85px 87px 63px;
+	margin-top: 80px;
+	position: relative;
+	color: rgba(32,36,46,.8);
+
+	@media only screen and (max-width: 767px) {
+		padding: 53px 40px 53px 40px;
+	}
+
+	.text-heading {
+		font-size: 30px;
+		color: #07080c;
+		font-weight: bold;
+		text-transform: capitalize;
+		font-family: 'oswald';
+		line-height: 1.15;
+  		margin-bottom: 1.1em;
+	}
+
+	.text1, .text2 {
+		font-size: 16px;
+		color: rgba(32, 36, 46, 0.80);
+		line-height: 1.8em;
+		margin-bottom: 25px;
+		max-width: 1050px;
+	}
+
+	ul {
+		padding-left: 1.1em;
+
+		li {
+			font-size: 16px;
+  			line-height: 1.5em;
+		}
+	}
+
+	.text3 {
+		margin-top: 22px;
+		margin-bottom: 51px;
+	}
+
+	.text4 {
+		max-width: 1023px;
+		font-size: 16px;
+		color: rgba(32, 36, 46, 0.80);
+		padding-left: 0;
+
+		li {
+			font-size: 16px;
+			color: rgba(32, 36, 46, 0.80);
+			line-height: 3.5em;
+		}
+	}
+}
+
+.related-products {
+	text-align: center;
+
+	> h3 {
+		color: #07080c;
+		font-size: 40px;
+		font-weight: 700;
+		text-transform: capitalize;
+		line-height: 1.5em;
+	
+		margin-top: 83px;
+		  margin-bottom: 66px;
+		font-family: 'oswald';
+	}
+}

@@ -1,6 +1,6 @@
 import '../styles/globals.css';
 import '../styles/main.scss';
-import { StoreProvider } from '../utils/Store';
+import { StoreProvider } from '../utils';
 import OrderProvider from '../utils/Order';
 import { SessionProvider } from 'next-auth/react';
 import { ShippingAuth } from '../components/ShippingAuth';

@@ -21,7 +21,7 @@ export default function Home({ products }) {
 						<h3>Be Confident</h3>
 						<h5>Wear Color</h5>
 
-						<Link href={'/shop'} className="link-button">
+						<Link href={'/product/micellar-water-2'} className="link-button">
 							ORDER NOW
 							{icons.arrowLight}
 						</Link>

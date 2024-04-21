@@ -38,8 +38,8 @@ export default function FinishOrder() {
 	const itemsPrice = round2(
 		cartItems.reduce((a, c) => a + c.quantity * c.price, 0)
 	);
-	const shippingPrice = itemsPrice > 200 ? 0 : 15;
-	const taxPrice = round2(itemsPrice * 0.15);
+	const shippingPrice = itemsPrice > 200 ? 0 : 0; // No rate yet
+	const taxPrice = round2(itemsPrice * 0); // No rate yet
 	const totalPrice = round2(itemsPrice + shippingPrice + taxPrice);
 
 	const placeOrderHandler = async () => {
@@ -221,12 +221,15 @@ export default function FinishOrder() {
 								className="secondary-btn w-full"
 							>
 								{loading ? (
-									<ReactLoading
-										type="spin"
-										color="#333"
-										height={25}
-										width={25}
-									/>
+									<span className="flex items-center gap-4 flex-wrap">
+										<ReactLoading
+											type="spin"
+											color="#333"
+											height={25}
+											width={25}
+										/>
+										Creating your order...
+									</span>
 								) : (
 									<>PLACE ORDER</>
 								)}

@@ -29,6 +29,14 @@
 		}
 	}
 }
+ 
+.account-nav-link {
+	@apply  relative inline-block z-50 pl-[25px];
+
+	@media screen and (min-width: 650px) {
+		@apply border-r border-r-[#292929];
+	}
+}
 
 .account-dropdown {
 	@apply p-5;
@@ -60,6 +68,21 @@
 		border: 0 !important;
 		padding: 15px 0 !important;
 		margin: 0 !important; 
+		text-align: left;
+		display: block !important;
+
+		@media (max-width: 650px) {
+			font-size: 20px !important;
+			margin-top: 15px !important;
+
+			&:not(:last-of-type) {
+				&::after {
+					content: "";
+					display: block;
+					padding: 7px;
+				}
+			}
+		}
 
 		&:not(:last-of-type) {
 			border-bottom: 1px solid #ccc !important;

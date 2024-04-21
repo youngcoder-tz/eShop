@@ -1,17 +1,11 @@
-import Layout from '../components/Layout';
-import CheckoutWizard from '../components/CheckoutWizard';
+import { Layout } from '../components';
 import { OrderSummary } from '../components/OrderSummary';
 
 export default function FinishOrder() {
 	return (
-		<div>
-			<Layout title={'Finish Order'}>
-				<div className="my-14">
-					<CheckoutWizard activeStep={3} />
-					<OrderSummary />
-				</div>
-			</Layout>
-		</div>
+		<Layout title={'FINISH ORDER'}>
+			<OrderSummary />
+		</Layout>
 	);
 }
 

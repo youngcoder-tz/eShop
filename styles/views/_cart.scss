@@ -4,6 +4,10 @@
 	.select {
 		background-color: transparent;
 		color: #000;
+
+		@media screen and (max-width: 500px) {
+			padding: 7px 15px;
+		}
 	}
 
 	.bag > h1,

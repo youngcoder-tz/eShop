@@ -109,17 +109,18 @@ a {
 		z-index: 9;
 		transition: all 300ms ease-out;
 		border-radius: 10px;
-		max-height: 250px;
+		max-height: 190px;
 		overflow: auto;
+		width: 100%;
 
 		li {
-			margin: 0 .9375em;
+			// margin: 0 .9375em;
   			line-height: 190%;
 			color: #444;
 			text-transform: uppercase;
 			padding: .5em 1.875em;
-			text-align: left;
-  			font-size: .875em;
+			text-align: center;
+  			font-size: 16px;
 			cursor: pointer;
 			transition: all 300ms ease-out;
 			  

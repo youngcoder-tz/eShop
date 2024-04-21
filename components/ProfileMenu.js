@@ -49,7 +49,7 @@ export default function ProfileMenu({ logoutClickHandler, name }) {
 
 	return (
 		<div
-			className="relative inline-block z-50 pl-[25px] border-r border-r-[#292929]"
+			className="account-nav-link"
 			ref={wrapperRef}
 			onMouseEnter={() => setDropdownMenu(true)}
 			onMouseLeave={() => setDropdownMenu(false)}

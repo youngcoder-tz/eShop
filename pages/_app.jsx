@@ -67,7 +67,7 @@ export default function App({
 					rel="stylesheet"
 				/>
 
-				<title>Home - eleganté</title>
+				<title>eleganté</title>
 			</Head>
 
 			<SessionProvider session={session}>

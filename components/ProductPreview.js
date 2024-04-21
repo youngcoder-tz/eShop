@@ -5,8 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Rating, IconButton } from '@mui/material';
 import { GrClose } from 'react-icons/gr';
-import { BsSuitHeart } from 'react-icons/bs';
-import { BsSuitHeartFill } from 'react-icons/bs';
+import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs';
+import { addToCart, Store } from '../utils';
+import { useContext } from 'react';
 
 /**
  * Internal dependencies
@@ -14,6 +15,8 @@ import { BsSuitHeartFill } from 'react-icons/bs';
 import Button from './Button';
 
 export default ({ item, showPreview, setShowPreview }) => {
+	const { state, dispatch } = useContext(Store);
+
 	const {
 		image,
 		name,
@@ -72,7 +75,11 @@ export default ({ item, showPreview, setShowPreview }) => {
 						</div>
 
 						<div className="actions">
-							<Button className="add-to-cart" variant="outlined-btn">
+							<Button
+								className="add-to-cart"
+								variant="outlined-btn"
+								onClick={() => addToCart(item, state, dispatch)}
+							>
 								ADD TO CART
 							</Button>
 

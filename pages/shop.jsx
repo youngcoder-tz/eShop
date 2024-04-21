@@ -30,8 +30,13 @@ export default function Home({
 	minPrice,
 }) {
 	const router = useRouter();
-	const { page = 1 } = router.query;
+	const { page = 1, sort } = router.query;
 	const [selectedPrice, setSelectedPrice] = useState([minPrice, maxPrice]);
+
+	const selectOptions = [
+		{ name: 'Low to High', value: 'lowest' },
+		{ name: 'High to Low', value: 'highest' },
+	];
 
 	const handlePriceChange = (event, newValue) => {
 		setSelectedPrice(newValue);
@@ -84,11 +89,12 @@ export default function Home({
 
 			<div className="sort-results">
 				<Select
-					text="SORT BY: DEFAULT"
-					options={[
-						{ name: 'Low to High', value: 'lowest' },
-						{ name: 'High to Low', value: 'highest' },
-					]}
+					text={`SORT BY: ${
+						sort
+							? selectOptions.find((option) => option.value === sort).name
+							: 'DEFAULT'
+					}`}
+					options={selectOptions}
 					onChange={sortHandler}
 				/>
 

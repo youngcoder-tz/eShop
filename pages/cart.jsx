@@ -1,6 +1,7 @@
+/**
+ * External dependencies
+ */
 import { useContext } from 'react';
-import { Store } from '../utils/Store';
-import Layout from '../components/Layout';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AiOutlineClose } from 'react-icons/ai';
@@ -8,14 +9,13 @@ import { useRouter } from 'next/router';
 import dynamic from 'next/dynamic';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-import { motion } from 'framer-motion';
 import { TbShoppingCartX } from 'react-icons/tb';
 
 /**
  * Internal dependencies
  */
-import { ProductHeader, Select } from '../components';
-import AddCounpon from '../components/AddCounpon';
+import { Store } from '../utils';
+import { ProductHeader, Select, AddCoupon, Layout } from '../components';
 
 function CartScreen() {
 	const { push } = useRouter();
@@ -80,9 +80,12 @@ function CartScreen() {
 									<th>Price</th>
 								</tr>
 							</thead>
-							{cartItems.map((item) => (
-								<tbody key={item.slug}>
-									<tr className="text-center border text-sm md:text-lg">
+							<tbody>
+								{cartItems.map((item) => (
+									<tr
+										key={item.slug}
+										className="text-center border text-sm md:text-lg"
+									>
 										<td className="text-left">
 											<div className="flex items-center p-5">
 												<button
@@ -127,11 +130,11 @@ function CartScreen() {
 											${item.priceDisplay}
 										</td>
 									</tr>
-								</tbody>
-							))}
+								))}
+							</tbody>
 						</table>
 
-						<AddCounpon />
+						<AddCoupon />
 					</section>
 
 					<section className="totals">

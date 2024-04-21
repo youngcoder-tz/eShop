@@ -1,0 +1,96 @@
+.finish-order {
+	section > h3 {
+		font-family: oswald;
+		font-size: 1.6875em;
+		line-height: 1.8;
+		margin-bottom: .6em;
+		font-style: normal;
+		letter-spacing: 0;
+		font-weight: 600;
+		margin-top: .2em;
+		text-rendering: optimizeSpeed;
+	}
+
+	.auth-form {
+		border: 0;
+		padding: 0;
+	}
+
+	.your-order {
+		table {
+			width: 100%;
+			max-width: 100%;
+
+			padding: 1.43em 1.4em 1.43em 0;
+			margin: 1.875em 0;
+			border: 1px solid #bbb;
+
+			.right-side {
+				@apply text-left w-[75%] pl-[1.9em];
+			}
+
+			.left-side {
+				@apply text-right pr-[1.9em];
+			}
+
+			tr {
+				border-bottom: 1px solid #888;
+				text-transform: uppercase;
+				font-size: .8em;
+			}
+
+			th, td {
+					text-transform: uppercase;
+					font-weight: 600;
+					font-size: 1.2em;
+					padding-top: 1.5em;
+  					padding-bottom: 1.5em;
+				}
+
+			thead {
+				border-bottom: 1px solid #bbb;
+
+				th {
+					border: none;
+					padding: 1.43em 1.4em 1.43em 1.9em;
+					background-color: #fff;
+					color: #aaa;
+					font-size: 1.125em;
+					font-weight: 600;
+				}
+			}
+
+			td {
+				padding: 1.0625em 1.875em;
+
+				&:first-child, &:last-child {
+					padding-left: 1.9em;
+				}
+
+				&.product-name {
+					font-weight: 600;
+					padding-left: 0;
+				}
+			}
+
+			tfoot {
+				border-top: 1px solid #bbb;
+			}
+		}
+
+		.payment {
+			border: 1px solid #bbb;
+  			margin: 1.875em 0;
+
+			form {
+				padding: 1.625em 1.9375em 0;
+  				margin-bottom: .8em;
+			}
+
+			> div {
+				border-top: 1px solid #bbb;
+  				padding: 2.1225em 1.875em;
+			}
+		}
+	}
+}

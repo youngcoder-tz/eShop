@@ -6,6 +6,10 @@ a {
 	&:hover {
 		color: #D10D43;
 	}
+
+	&.link-blue {
+		@apply text-[#1bb0ce] hover:text-[#1691aa];
+	}
 }
 
 .contained-input {

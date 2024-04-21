@@ -6,6 +6,7 @@ import Layout from './Layout';
 import Subscribe from './Subscribe';
 import Select from './Select';
 import ProductHeader from './ProductHeader';
+import AddCoupon from './AddCoupon';
 
 export {
 	Button,
@@ -16,4 +17,5 @@ export {
 	Subscribe,
 	Select,
 	ProductHeader,
+	AddCoupon,
 };

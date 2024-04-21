@@ -5,10 +5,7 @@ import Order from '../../../models/Order';
 export default async function handler(req, res) {
 	const session = await getSession({ req });
 
-	// console.log(req);
-
 	if (!session) {
-		console.log('nosesh');
 		return res.status(401).send('sigin required');
 	}
 

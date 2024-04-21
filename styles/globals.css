@@ -22,10 +22,6 @@
 	.alert-success {
 		@apply m-3 rounded-lg bg-red-100 p-3 text-green-700;
 	}
-
-	.dropdown-link {
-		@apply flex p-2 hover:bg-emerald-600;
-	}
 }
 
 body {

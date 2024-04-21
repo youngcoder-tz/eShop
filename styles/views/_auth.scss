@@ -1,0 +1,68 @@
+.auth-title {
+	font-size: 45px;
+	font-weight: 700;
+	line-height: 1.4em;
+	font-family: "oswald";
+	text-transform: uppercase;
+}
+
+.auth-form {
+	padding: 20px;
+	margin: 2em 0;
+	text-align: left;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+
+	.required {
+		@apply text-red-600 ml-3;
+		font-weight: 700; 
+	}
+
+	label {
+		display: block;
+		margin-bottom: 1em;
+		cursor: pointer;
+		font-size: 1.2em;
+
+		&:not(:first-of-type) {
+			margin-top: 1.25rem;
+		}
+	}
+}
+
+.account-dropdown {
+	@apply p-5;
+
+	will-change: transform;
+	background-color: #fff;
+	border: 1px solid #bbb;
+	width: 290px;
+	position: absolute;
+	right: 0;
+	left: auto;
+	bottom: 0;
+	transform: translateY(calc(100% + 15px));
+	z-index: 10;
+	transition: all 400ms ease-in-out;
+
+	max-height: 0;
+	visibility: hidden;
+	opacity: 0;
+	overflow: hidden;
+
+	&.is-active {
+		opacity: 1;
+		max-height: 200px;
+		visibility: visible;
+	}
+
+	.dropdown-link {
+		border: 0 !important;
+		padding: 15px 0 !important;
+		margin: 0 !important; 
+
+		&:not(:last-of-type) {
+			border-bottom: 1px solid #ccc !important;
+		}
+	}
+}

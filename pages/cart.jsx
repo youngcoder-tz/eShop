@@ -150,7 +150,7 @@ function CartScreen() {
 							</div>
 
 							<button
-								onClick={() => push('/login?redirect=/shipping')}
+								onClick={() => push('/login?redirect=/finish-order')}
 								className="primary-btn w-full"
 							>
 								PROCEED TO CHECKOUT

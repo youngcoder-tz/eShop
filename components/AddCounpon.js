@@ -19,7 +19,7 @@ export default () => {
 			</p>
 
 			<div
-				className={`coupon-form space-y-5 my-5 ${showForm ? 'is-active' : ''}`}
+				className={`coupon-form space-y-5 m-5 ${showForm ? 'is-active' : ''}`}
 			>
 				<p>If you have a coupon code, please apply it below.</p>
 				<input

@@ -1,14 +1,19 @@
+/**
+ * External dependencies
+ */
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { getSession, signIn } from 'next-auth/react';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/router';
-import { GiShoppingBag } from 'react-icons/gi';
 import { useState } from 'react';
 import ReactLoading from 'react-loading';
-import Image from 'next/image';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
+
+/**
+ * Internal dependencies
+ */
+import { Layout } from '../components';
+import { displayError } from '../utils';
 
 export default function LoginScreen() {
 	const [loading, setLoading] = useState(false);
@@ -37,120 +42,69 @@ export default function LoginScreen() {
 	};
 
 	return (
-		<>
-			<motion.div
-				initial={{ opacity: 0 }}
-				animate={{ opacity: 1 }}
-				exit={{ opacity: 0 }}
-				className="flex flex-col h-[100vh] justify-center items-center bg-stone-200"
-			>
-				<Head>
-					<title>Login - Green Shop</title>
-				</Head>
+		<Layout title={'LOGIN'}>
+			<h2 className="auth-title">Login</h2>
 
-				<div className="flex items-center">
-					<div>
-						<Image
-							src={'/images/loginbg.jpg'}
-							alt="WELCOME"
-							width={7000}
-							height={9852}
-							className="h-[450px] w-[350px] hidden md:flex bg-black"
-						/>
-					</div>
+			<form className="auth-form" onSubmit={handleSubmit(submitHandler)}>
+				{/* Email */}
+				<label htmlFor="email">
+					Email
+					<span className="required">*</span>
+				</label>
+				<input
+					{...register('email', {
+						required: 'Please enter email',
+						pattern: {
+							value: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
+							message: 'Invalid email format',
+						},
+					})}
+					type="email"
+					id="email"
+					className="contained-input"
+				/>
+				{errors.email && displayError(errors.email.message)}
 
-					<div className="md:h-[450px] flex flex-col items-center justify-center w-fit bg-emerald-900 text-green-50 p-8 px-12 sm:px-14">
+				{/* Password */}
+				<label htmlFor="password" className="mt-5">
+					Password
+					<span className="required">*</span>
+				</label>
+				<input
+					{...register('password', {
+						required: 'Please enter password',
+						minLength: {
+							value: 6,
+							message: 'password must be at least 6 characters',
+						},
+					})}
+					type="password"
+					id="password"
+					className="contained-input"
+				/>
+				{errors.password && displayError(errors.password.message)}
+
+				<p className="mt-10 gap-7 flex flex-wrap items-center">
+					<button className="secondary-btn">
+						{loading ? (
+							<ReactLoading type="spin" color="#333" height={25} width={25} />
+						) : (
+							<>Log in</>
+						)}
+					</button>
+
+					<span>
+						Don't have an account?{' '}
 						<Link
-							href={'/shop'}
-							className="flex flex-col items-center justify-center mb-5"
+							href={`/register?redirect=${redirect || '/shop'}`}
+							className="text-[#1bb0ce] hover:text-[#1691aa]"
 						>
-							<GiShoppingBag className="w-20 h-20 text-green-100 hover:text-green-300" />
+							Register
 						</Link>
-
-						<form
-							onSubmit={handleSubmit(submitHandler)}
-							className="space-y-8 mb-4"
-						>
-							<div className="space-y-4">
-								<div>
-									<input
-										{...register('email', {
-											required: 'Please enter email',
-											pattern: {
-												value:
-													/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/i,
-												message: 'Invalid email format',
-											},
-										})}
-										type="email"
-										id="email"
-										placeholder="danny@shop.com"
-										className="placeholder:lowercase"
-									/>
-									{errors.email && (
-										<div>
-											<em>* {errors.email.message}</em>{' '}
-										</div>
-									)}
-								</div>
-
-								<div>
-									<input
-										{...register('password', {
-											required: 'Please enter password',
-											minLength: {
-												value: 6,
-												message: 'password must be at least 6 characters',
-											},
-										})}
-										type="password"
-										id="password"
-										placeholder="123456"
-									/>
-									{errors.password && (
-										<div>
-											<em>* {errors.password.message}</em>
-										</div>
-									)}
-								</div>
-							</div>
-
-							<div className="text-center">
-								{loading ? (
-									<div className="flex justify-center">
-										<ReactLoading
-											type="spin"
-											color="#7abc7fee"
-											height={50}
-											width={25}
-											className="flex flex-col items-center"
-										/>
-									</div>
-								) : (
-									<button className="primary-button tracking-widest shadow-none">
-										Log In
-									</button>
-								)}
-							</div>
-						</form>
-
-						<h1 className="text-center text-sm">
-							Don't have an account?{' '}
-							<Link
-								href={`/register?redirect=${redirect || '/shop'}`}
-								className="text-green-400 hover:text-green-500 active:text-green-400 uppercase font-semibold"
-							>
-								Register
-							</Link>
-						</h1>
-
-						<div className="text-xs mt-3">
-							<em>please sign in with placeholder credentials</em>
-						</div>
-					</div>
-				</div>
-			</motion.div>
-		</>
+					</span>
+				</p>
+			</form>
+		</Layout>
 	);
 }
 

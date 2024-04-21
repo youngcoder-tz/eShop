@@ -9,7 +9,7 @@ import { SlArrowDown } from 'react-icons/sl';
  */
 import { Button } from '.';
 
-export default ({ text, options = [], onChange = () => {} }) => {
+export default ({ value, options = [], onChange = () => {} }) => {
 	const [showMenu, setShowMenu] = useState(false);
 
 	const handleToggle = () => {
@@ -28,7 +28,7 @@ export default ({ text, options = [], onChange = () => {} }) => {
 				onClick={handleToggle}
 				className={showMenu ? 'is-active' : ''}
 			>
-				{text}
+				{value}
 				<SlArrowDown className="inline ml-4 text-[13px] mb-[0.15rem]" />
 			</Button>
 

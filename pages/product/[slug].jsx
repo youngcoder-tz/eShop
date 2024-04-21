@@ -5,7 +5,6 @@ import { useContext } from 'react';
 import { addToCart, db, Store } from '../../utils';
 import Image from 'next/image';
 import { BsSuitHeart } from 'react-icons/bs';
-import { SlArrowRight } from 'react-icons/sl';
 import { IconButton, Rating } from '@mui/material';
 import Link from 'next/link';
 import Product from '../../models/Product';
@@ -48,10 +47,14 @@ export default function ProductScreen({ products, product }) {
 	return (
 		<>
 			<Layout title={product.name}>
-				<ProductHeader title={name}>
-					<SlArrowRight className="arrow" />
-					<span className="text-[#D10D43]">{name}</span>
-				</ProductHeader>
+				<ProductHeader
+					title={name}
+					links={[
+						{ name: 'Home', href: '/' },
+						{ name: 'Prodcuts', href: '/shop' },
+						{ name },
+					]}
+				/>
 
 				<div className="slug-content">
 					<div className="quicklook-image">
@@ -180,8 +183,6 @@ export default function ProductScreen({ products, product }) {
 
 					<ProductsList products={products.slice(0, 4)} />
 				</section>
-
-				<Subscribe />
 			</Layout>
 		</>
 	);

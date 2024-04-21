@@ -11,6 +11,7 @@ import { useState, useEffect } from 'react';
  * Internal dependencies
  */
 import Button from './Button';
+import Subscribe from './Subscribe';
 
 export default () => {
 	const [showScroll, setShowScroll] = useState(false);
@@ -37,6 +38,7 @@ export default () => {
 	return (
 		<>
 			<footer className="max-w-container">
+				<Subscribe />
 				<div className="main">
 					<div className="info">
 						<h1 className="elegante">eleganté</h1>

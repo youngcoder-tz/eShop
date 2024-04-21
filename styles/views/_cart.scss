@@ -1,0 +1,56 @@
+.cart-container {
+	@apply lg:grid lg:grid-cols-5 gap-10;
+
+	.select {
+		background-color: transparent;
+		color: #000;
+	}
+
+	.bag > h1,
+	.totals > h1 {
+		font-size: 2.1em;
+		font-family: 'oswald';
+		line-height: 1.5;
+		margin-bottom: .5em;
+		letter-spacing: 0;
+		font-weight: 600;
+		margin-top: .2em;
+		text-rendering: optimizeSpeed;
+	}
+
+	table {
+		tr, thead {
+			border-color: #ddd;
+		}
+
+		th, td {
+			font-family: 'montserrat';
+		}
+	}
+
+	.bag {
+		@apply col-span-3;
+
+		table {
+			thead {
+				th {
+					font-weight: 600;
+					background-color: #fff;
+					color: #aaa;
+					font-size: 1.125em;
+				}
+			}
+		}
+	}
+
+	.totals {
+		@apply mt-10 md:mt-0 col-span-2;
+
+		.subtotal {
+			background-color: #fff;
+			text-transform: uppercase;
+			font-weight: 600;
+			font-size: .9375em;
+		}
+	}
+}

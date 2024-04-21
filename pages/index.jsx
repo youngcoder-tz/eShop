@@ -171,9 +171,6 @@ export default function Home({ products }) {
 					</div>
 				</div>
 			</section>
-
-			{/* Subscribe */}
-			<Subscribe />
 		</Layout>
 	);
 }

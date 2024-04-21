@@ -1,12 +1,10 @@
 /**
  * External dependencies
  */
-import { SlArrowRight } from 'react-icons/sl';
 import { Box, Slider } from '@mui/material';
 import { useState } from 'react';
 import { db } from '../utils';
 import Product from '../models/Product';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 
 /**
@@ -85,11 +83,17 @@ export default function Home({
 
 	return (
 		<Layout title="SHOP">
-			<ProductHeader title={'Products'} />
+			<ProductHeader
+				title={'Products'}
+				links={[
+					{ name: 'Home', href: '/' },
+					{ name: 'Prodcuts', href: '/shop' },
+				]}
+			/>
 
 			<div className="sort-results">
 				<Select
-					text={`SORT BY: ${
+					value={`SORT BY: ${
 						sort
 							? selectOptions.find((option) => option.value === sort).name
 							: 'DEFAULT'
@@ -170,8 +174,6 @@ export default function Home({
 						</li>
 					))}
 			</ul>
-
-			<Subscribe />
 		</Layout>
 	);
 }

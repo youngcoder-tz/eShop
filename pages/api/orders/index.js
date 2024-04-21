@@ -9,7 +9,7 @@ export default async function handler(req, res) {
 
 	if (!session) {
 		console.log('nosesh');
-		return req?.status(401).send('sigin required');
+		return res.status(401).send('sigin required');
 	}
 
 	const user = session;

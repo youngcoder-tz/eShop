@@ -78,13 +78,15 @@ function OrderHistory() {
 					</table>
 				</div>
 			) : (
-				<div className="text-center">
-					<h1>Please go shopping first to be able to view shopping history</h1>
+				<div className="text-left">
+					<h1 className="font-bold mb-4">
+						Oh, you haven't made any orders yet.
+					</h1>
 					<Link
 						href={'/shop'}
-						className="text-green-500 text-sm hover:text-green-300 active:text-green-500"
+						className="link-blue underline underline-offset-8"
 					>
-						Go Shopping
+						<span>Go Shopping</span>
 					</Link>
 				</div>
 			)}

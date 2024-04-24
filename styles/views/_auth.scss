@@ -89,3 +89,13 @@
 		}
 	}
 }
+
+.not-found {
+	@apply flex flex-col justify-center items-center;
+
+	> h1 {
+		font-family: 'oswald';
+		font-size: 2rem;
+		margin-bottom: 30px;
+	}
+}

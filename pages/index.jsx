@@ -9,7 +9,7 @@ import Link from 'next/link';
  */
 import { icons, db } from '../utils';
 import Product from '../models/Product';
-import { ProductsList, Layout, Subscribe } from '../components';
+import { ProductsList, Layout } from '../components';
 
 export default function Home({ products }) {
 	return (

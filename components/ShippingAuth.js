@@ -1,6 +1,13 @@
+/**
+ * External dependencies
+ */
 import { useRouter } from 'next/router';
 import { useSession } from 'next-auth/react';
 import ReactLoading from 'react-loading';
+
+/**
+ * Internal dependencies
+ */
 import Layout from './Layout';
 
 export const ShippingAuth = ({ children }) => {

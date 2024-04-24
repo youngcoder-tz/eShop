@@ -1,8 +1,7 @@
-import { Menu } from '@headlessui/react';
+/**
+ * External dependencies
+ */
 import Link from 'next/link';
-import { CgProfile } from 'react-icons/cg';
-import { AiOutlineDown } from 'react-icons/ai';
-import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
 export default function ProfileMenu({ logoutClickHandler, name }) {

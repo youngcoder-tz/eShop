@@ -1,10 +1,17 @@
+/**
+ * External dependencies
+ */
+import { SessionProvider } from 'next-auth/react';
+import { ShippingAuth } from '../components/ShippingAuth';
+import Head from 'next/head';
+
+/**
+ * Internal dependencies
+ */
 import '../styles/globals.css';
 import '../styles/main.scss';
 import { StoreProvider } from '../utils';
 import OrderProvider from '../utils/Order';
-import { SessionProvider } from 'next-auth/react';
-import { ShippingAuth } from '../components/ShippingAuth';
-import Head from 'next/head';
 
 export default function App({
 	Component,

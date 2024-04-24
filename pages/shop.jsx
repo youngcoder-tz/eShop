@@ -13,7 +13,6 @@ import { useRouter } from 'next/router';
 import {
 	Button,
 	Select,
-	Subscribe,
 	ProductsList,
 	ProductHeader,
 	Layout,

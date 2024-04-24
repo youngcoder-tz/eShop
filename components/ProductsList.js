@@ -5,12 +5,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useContext } from 'react';
 import { FaPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
-import {IconButton} from '@mui/material'
+import { IconButton } from '@mui/material';
 
 /**
  * Internal dependencies
  */
-import Button from './Button';
 import ProductPreview from './ProductPreview';
 import { addToCart, Store } from '../utils';
 

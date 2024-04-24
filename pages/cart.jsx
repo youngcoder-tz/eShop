@@ -44,19 +44,25 @@ function CartScreen() {
 
 	if (cartItems.length === 0) {
 		return (
-			<div className="flex flex-col justify-center items-center h-[50vh]">
-				<h1 className="flex items-center text-lg">
-					No items in Cart <TbShoppingCartX className="ml-2 w-6 h-6" />{' '}
-				</h1>
-				<div>
-					<Link
-						href={'/shop'}
-						className="text-green-500 text-sm hover:text-green-300 active:text-green-500"
-					>
-						Go Shopping
-					</Link>
+			<Layout title={'CART'}>
+				<ProductHeader
+					title={'CART'}
+					links={[{ name: 'Home', href: '/' }, { name: 'Cart' }]}
+				/>
+				<div className="">
+					<h1 className="flex items-center text-xl uppercase font-bold mb-3">
+						Your cart is empty
+					</h1>
+					<div>
+						<Link
+							href={'/shop'}
+							className="link-blue underline underline-offset-8 mb-5"
+						>
+							Go Shopping
+						</Link>
+					</div>
 				</div>
-			</div>
+			</Layout>
 		);
 	}
 

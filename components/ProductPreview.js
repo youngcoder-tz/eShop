@@ -5,7 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Rating, IconButton } from '@mui/material';
 import { GrClose } from 'react-icons/gr';
-import { BsSuitHeart, BsSuitHeartFill } from 'react-icons/bs';
+import { BsSuitHeart } from 'react-icons/bs';
 import { addToCart, Store } from '../utils';
 import { useContext } from 'react';
 

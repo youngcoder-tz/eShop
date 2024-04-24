@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useContext } from 'react';
 import { FaPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
+import {IconButton} from '@mui/material'
 
 /**
  * Internal dependencies
@@ -46,7 +47,7 @@ export default ({ products = [] }) => {
 								</Link>
 
 								<div className="actions">
-									<Button
+									<IconButton
 										onClick={() => {
 											setShowPreview(true);
 											setCurrentItem(item);
@@ -55,19 +56,19 @@ export default ({ products = [] }) => {
 										className="preview"
 									>
 										<FaRegEye />
-									</Button>
+									</IconButton>
 
-									<Button title="Add to Favorites" className="favorite">
+									<IconButton title="Add to Favorites" className="favorite">
 										<FaRegHeart />
-									</Button>
+									</IconButton>
 
-									<Button
+									<IconButton
 										title="Add to Cart"
 										className="cart"
 										onClick={() => addToCart(item, state, dispatch)}
 									>
 										<FaPlus />
-									</Button>
+									</IconButton>
 								</div>
 							</div>
 

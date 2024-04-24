@@ -1,0 +1,38 @@
+.checkout {
+	&-container {
+		@media (min-width: 880px) {
+			display: flex;
+		}
+	}
+
+	&-title {
+		> h1 {
+			font-family: 'oswald';
+			font-size: 2.5em;
+			line-height: 1.8;
+			font-style: normal;
+			letter-spacing: 0;
+			font-weight: 600;
+			text-rendering: optimizeSpeed;
+
+			.total {
+				font-family: "montserrat";
+			}
+		}
+
+		@media (max-width: 880px) {
+			text-align: center;
+			max-width: 350px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	table {
+		th {
+			font-size: 13px;
+		}
+	}
+}

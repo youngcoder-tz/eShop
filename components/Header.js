@@ -63,6 +63,7 @@ export function NavLinks() {
 	const logoutClickHandler = () => {
 		Cookies.remove('cart');
 		Cookies.remove('order');
+		Cookies.remove('favorites');
 		dispatch({ type: 'CART_REST' });
 		signOut({ callbackUrl: '/' });
 	};
@@ -75,7 +76,7 @@ export function NavLinks() {
 		<div className="links">
 			<Link href="/shop">Shop</Link>
 
-			<Link href="">Favorites</Link>
+			<Link href="/favorites">Favorites</Link>
 
 			{session?.user ? (
 				<ProfileMenu

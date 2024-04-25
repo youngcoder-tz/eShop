@@ -70,7 +70,7 @@ export default () => {
 							</p>
 
 							<p>
-								<Link href="#">Favorites</Link>
+								<Link href="/favorites">Favorites</Link>
 							</p>
 						</div>
 					</div>

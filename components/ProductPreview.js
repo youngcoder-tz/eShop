@@ -5,19 +5,24 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Rating, IconButton } from '@mui/material';
 import { GrClose } from 'react-icons/gr';
-import { BsSuitHeart } from 'react-icons/bs';
-import { addToCart, Store } from '../utils';
+import { FaRegHeart, FaHeart } from 'react-icons/fa';
 import { useContext } from 'react';
 
 /**
  * Internal dependencies
  */
 import Button from './Button';
+import { ADD_TO_FAVORITES, addToCart, Favorites, Store } from '../utils';
 
-export default ({ item, showPreview, setShowPreview }) => {
+export default ({ item, setShowPreview }) => {
 	const { state, dispatch } = useContext(Store);
+	const {
+		state: { favorites },
+		dispatch: dispatchFavorites,
+	} = useContext(Favorites);
 
 	const {
+		slug,
 		image,
 		name,
 		rating,
@@ -84,8 +89,25 @@ export default ({ item, showPreview, setShowPreview }) => {
 								ADD TO CART
 							</Button>
 
-							<IconButton title="Add to favorite" className="favorite">
-								<BsSuitHeart />
+							<IconButton
+								onClick={() =>
+									dispatchFavorites({
+										type: ADD_TO_FAVORITES,
+										payload: item,
+									})
+								}
+								title="Add to favorite"
+								className="favorite"
+							>
+								{favorites.find((favorite) => favorite.slug === slug) ? (
+									<p className="border border-[#D10D43] p-2 rounded-full">
+										<FaHeart color="#D10D43" />
+									</p>
+								) : (
+									<p className="border p-2 rounded-full">
+										<FaRegHeart />
+									</p>
+								)}
 							</IconButton>
 						</div>
 					</div>

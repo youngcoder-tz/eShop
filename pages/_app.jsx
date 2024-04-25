@@ -2,7 +2,7 @@
  * External dependencies
  */
 import { SessionProvider } from 'next-auth/react';
-import { ShippingAuth } from '../components/ShippingAuth';
+import { Unauthorized } from '../components';
 import Head from 'next/head';
 
 /**
@@ -82,9 +82,9 @@ export default function App({
 					<StoreProvider>
 						<FavoriteProvider>
 							{Component.auth ? (
-								<ShippingAuth>
+								<Unauthorized>
 									<Component {...pageProps} />
-								</ShippingAuth>
+								</Unauthorized>
 							) : (
 								<Component {...pageProps} />
 							)}

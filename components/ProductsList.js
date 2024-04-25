@@ -4,7 +4,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { Fragment, useState, useContext } from 'react';
-import { FaPlus, FaRegEye, FaRegHeart } from 'react-icons/fa';
+import { FaPlus, FaRegEye, FaRegHeart, FaHeart } from 'react-icons/fa';
 import { IconButton } from '@mui/material';
 
 /**
@@ -18,10 +18,10 @@ export default ({ products = [] }) => {
 	const [showPreview, setShowPreview] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
 
-	const { state: favorites, dispatch: dispatchFavorites } =
-		useContext(Favorites);
-
-	console.log(favorites);
+	const {
+		state: { favorites },
+		dispatch: dispatchFavorites,
+	} = useContext(Favorites);
 
 	return (
 		<>
@@ -72,7 +72,11 @@ export default ({ products = [] }) => {
 										title="Add to Favorites"
 										className="favorite"
 									>
-										<FaRegHeart />
+										{favorites.find((favorite) => favorite.slug === slug) ? (
+											<FaHeart />
+										) : (
+											<FaRegHeart />
+										)}
 									</IconButton>
 
 									<IconButton

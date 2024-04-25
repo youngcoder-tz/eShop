@@ -1,5 +1,14 @@
 $black: #292929;
 
+.fadeIn {
+	animation-delay: 200ms;
+	animation-timing-function: cubic-bezier(.165,.84,.44,1);
+	animation-name: AuxFadeInUp;
+	animation-duration: 1s;
+	animation-fill-mode: both;
+	opacity: 0;
+}
+
 a {
 	transition: color 150ms linear;
 

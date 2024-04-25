@@ -1144,11 +1144,11 @@ footer {
 		
 		max-width: 315px;
 		@apply mx-auto;
-
-		padding-left: 15px;
-		padding-right: 15px;
+		
 		display: block;
 		width: 100%;
+		padding-right: 15px;
+		padding-left: 15px;
 
 		.img-container {
 			img {
@@ -1465,10 +1465,9 @@ footer {
 		.actions {
 			margin-top: 5rem;
 			display: flex;
-			justify-content: space-between;
 			align-items: center;
 			flex-wrap: wrap;
-			gap: 10px;
+			gap: 20px;
 
 			.add-to-cart {
 				font-size: 15px;

@@ -7,6 +7,7 @@ import Subscribe from './Subscribe';
 import Select from './Select';
 import ProductHeader from './ProductHeader';
 import AddCoupon from './AddCoupon';
+import { Unauthorized } from './Unauthorized';
 
 export {
 	Button,
@@ -18,4 +19,5 @@ export {
 	Select,
 	ProductHeader,
 	AddCoupon,
+	Unauthorized,
 };

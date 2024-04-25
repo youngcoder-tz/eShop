@@ -90,7 +90,7 @@ export default function Home({
 				]}
 			/>
 
-			<div className="sort-results">
+			<div className="sort-results fadeIn">
 				<Select
 					value={`SORT BY: ${
 						sort
@@ -108,7 +108,7 @@ export default function Home({
 				</p>
 			</div>
 
-			<aside className="filters">
+			<aside className="filters fadeIn">
 				<section className="categories">
 					<h3>Shop by category</h3>
 

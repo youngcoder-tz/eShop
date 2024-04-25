@@ -10,7 +10,7 @@ import ReactLoading from 'react-loading';
  */
 import Layout from './Layout';
 
-export const ShippingAuth = ({ children }) => {
+export const Unauthorized = ({ children }) => {
 	const { push } = useRouter();
 	const { status } = useSession({
 		required: true,

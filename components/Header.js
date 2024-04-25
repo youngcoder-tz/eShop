@@ -23,7 +23,7 @@ export default () => {
 		<>
 			<header className="max-w-container">
 				<div className={`header ${toggleMenu ? 'is-sticky' : ''}`}>
-					<Link href="/" className="elegante">
+					<Link href="/" className="elegante !text-[#D10D43]">
 						eleganté
 					</Link>
 

@@ -11,12 +11,17 @@ import { IconButton } from '@mui/material';
  * Internal dependencies
  */
 import ProductPreview from './ProductPreview';
-import { addToCart, Store } from '../utils';
+import { addToCart, Store, Favorites, ADD_TO_FAVORITES } from '../utils';
 
 export default ({ products = [] }) => {
 	const { state, dispatch } = useContext(Store);
 	const [showPreview, setShowPreview] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
+
+	const { state: favorites, dispatch: dispatchFavorites } =
+		useContext(Favorites);
+
+	console.log(favorites);
 
 	return (
 		<>
@@ -57,7 +62,16 @@ export default ({ products = [] }) => {
 										<FaRegEye />
 									</IconButton>
 
-									<IconButton title="Add to Favorites" className="favorite">
+									<IconButton
+										onClick={() =>
+											dispatchFavorites({
+												type: ADD_TO_FAVORITES,
+												payload: item,
+											})
+										}
+										title="Add to Favorites"
+										className="favorite"
+									>
 										<FaRegHeart />
 									</IconButton>
 

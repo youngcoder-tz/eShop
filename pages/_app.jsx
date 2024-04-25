@@ -10,7 +10,7 @@ import Head from 'next/head';
  */
 import '../styles/globals.css';
 import '../styles/main.scss';
-import { StoreProvider } from '../utils';
+import { StoreProvider, FavoriteProvider } from '../utils';
 import OrderProvider from '../utils/Order';
 
 export default function App({
@@ -80,13 +80,15 @@ export default function App({
 			<SessionProvider session={session}>
 				<OrderProvider>
 					<StoreProvider>
-						{Component.auth ? (
-							<ShippingAuth>
+						<FavoriteProvider>
+							{Component.auth ? (
+								<ShippingAuth>
+									<Component {...pageProps} />
+								</ShippingAuth>
+							) : (
 								<Component {...pageProps} />
-							</ShippingAuth>
-						) : (
-							<Component {...pageProps} />
-						)}
+							)}
+						</FavoriteProvider>
 					</StoreProvider>
 				</OrderProvider>
 			</SessionProvider>

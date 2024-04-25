@@ -18,7 +18,7 @@ export default ({ children, title }) => (
 		</Head>
 
 		<ToastContainer
-			position="top-right"
+			position="top-left"
 			limit={3}
 			autoClose={3000}
 			pauseOnFocusLoss={false}

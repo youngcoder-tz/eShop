@@ -114,14 +114,14 @@ function OrderScreen({ orderId }) {
 							<span className="block total">$ {totalPrice}.00</span>
 						</h1>
 						{!isPaid && (
-							<div className="flex justify-center mt-5 max-w-[350px]">
+							<div className="flex justify-center mt-5 max-w-[350px] relative z-10">
 								{isPending ? (
 									<div>
 										<ReactLoading
 											type="spin"
 											color="#333"
-											height={100}
-											width={50}
+											height={30}
+											width={30}
 										/>
 									</div>
 								) : (
@@ -138,8 +138,8 @@ function OrderScreen({ orderId }) {
 										<ReactLoading
 											type="spin"
 											color="#333"
-											height={100}
-											width={50}
+											height={30}
+											width={30}
 										/>
 									</div>
 								)}

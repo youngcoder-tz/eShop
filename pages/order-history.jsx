@@ -22,14 +22,10 @@ function OrderHistory() {
 
 			{order ? (
 				<div className="overflow-x-auto mb-14">
-					<table className="min-w-full border-[#bbb] border text-sm md:text-md">
+					<table className=" border-[#bbb] border text-sm md:text-md">
 						<thead>
 							<tr className=" text-left border-[#bbb] border-b">
-								<th className="px-5">ITEM</th>
-								<th className="p-5">ORDER DATE</th>
-								<th className="p-5">PAID</th>
-								<th className="p-5">DELIVERED</th>
-								<th className="p-5"></th>
+								<th className="p-5">ITEM</th>
 							</tr>
 						</thead>
 
@@ -50,27 +46,32 @@ function OrderHistory() {
 											width={80}
 											height={80}
 										/>
-										{item.name}
-									</td>
-									<td className="p-5">{order.createdAt.substring(0, 10)} </td>
-									<td className="p-5">
-										{order.isPaid ? (
-											`${order.paidAt.substring(0, 10)}`
-										) : (
-											<p className="">NOT PAID</p>
-										)}
-									</td>
-									<td className="p-5">
-										{order.isDelivered ? (
-											`${order.deliveredAt.substring(0, 10)}`
-										) : (
-											<p className="">NOT DELIVERED</p>
-										)}
-									</td>
-									<td className="p-5">
-										<Link href={`/order/${order._id}`} className="link-blue">
-											Go to order
-										</Link>
+										<div>
+											{item.name}
+											<p>Date: {order.createdAt.substring(0, 10)}</p>
+											<p>
+												{order.isPaid ? (
+													`${order.paidAt.substring(0, 10)}`
+												) : (
+													<p className="">NOT PAID</p>
+												)}
+											</p>
+											<p>
+												{order.isDelivered ? (
+													`${order.deliveredAt.substring(0, 10)}`
+												) : (
+													<p className="">NOT DELIVERED</p>
+												)}
+											</p>
+											<p>
+												<Link
+													href={`/order/${order._id}`}
+													className="link-blue"
+												>
+													Go to order
+												</Link>
+											</p>
+										</div>
 									</td>
 								</tr>
 							))}

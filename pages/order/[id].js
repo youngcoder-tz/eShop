@@ -164,14 +164,14 @@ function OrderScreen({ orderId }) {
 									<td className="text-left">
 										<Link
 											href={`/product/${item.slug}`}
-											className="flex items-center py-5 pl-5 text-[#1bb0ce] hover:text-[#1691aa] font-semibold"
+											className="flex flex-col sm:flex-row text-center sm:text-left items-center py-5 pl-5 text-[#1bb0ce] hover:text-[#1691aa] font-semibold gap-5"
 										>
 											<Image
 												src={item.image}
 												alt={item.name}
 												width={150}
 												height={150}
-												className="hidden pr-5 sm:inline-flex"
+												className="inline-flex"
 											/>
 
 											<p>

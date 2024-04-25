@@ -4,6 +4,7 @@
 import Head from 'next/head';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
 
 /**
  * Internal dependencies
@@ -11,24 +12,47 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './Header';
 import Footer from './Footer';
 
-export default ({ children, title }) => (
-	<>
-		<Head>
-			<title>{title ? title + ' - eleganté' : 'eleganté'}</title>
-		</Head>
+export default ({ children, title }) => {
+	useEffect(() => {
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('animate');
+				} else {
+					entry.target.classList.remove('animate');
+				}
+			});
+		});
 
-		<ToastContainer
-			position="top-left"
-			limit={3}
-			autoClose={3000}
-			pauseOnFocusLoss={false}
-			theme={'light'}
-		/>
+		const animatableElements = document.querySelectorAll('.will-animate');
+		animatableElements.forEach((el) => observer.observe(el));
+	});
 
-		<Header />
+	return (
+		<>
+			<Head>
+				<title>{title ? title + ' - eleganté' : 'eleganté'}</title>
+			</Head>
 
-		<main className="max-w-container min-h-[60vh]">{children}</main>
+			<ToastContainer
+				position="top-left"
+				limit={3}
+				autoClose={3000}
+				pauseOnFocusLoss={false}
+				theme={'light'}
+			/>
 
-		<Footer />
-	</>
-);
+			<Header />
+
+			<main
+				className={`max-w-container min-h-[60vh] ${
+					!['SHOP', 'HOME'].includes(title) ? 'will-animate main' : ''
+				}`}
+			>
+				{children}
+			</main>
+
+			<Footer />
+		</>
+	);
+};

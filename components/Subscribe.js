@@ -9,7 +9,7 @@ import Image from 'next/image';
 import { Button } from '.';
 
 export default () => (
-	<section className="subscribe">
+	<section className="subscribe will-animate">
 		<div className="container">
 			<div className="heading">
 				<h3>Subscribe Now</h3>

@@ -37,7 +37,7 @@ function OrderHistory() {
 								height={300}
 								className="my-5"
 							/>
-							<div className="text-left">
+							<div className="text-center">
 								<p className="mb-3 text-sm font-medium">
 									Order Date: {order.createdAt.substring(0, 10)}
 								</p>

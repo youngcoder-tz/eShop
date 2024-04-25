@@ -57,7 +57,7 @@ export default function Home({ products }) {
 			</section>
 
 			{/* Featured */}
-			<section className="featured">
+			<section className="featured will-animate">
 				<div className="card-1">
 					<span className="bg-overlay" />
 					<span className="text">
@@ -107,8 +107,8 @@ export default function Home({ products }) {
 			</section>
 
 			{/* Products */}
-			<section>
-				<div className="heading">
+			<section className="will-animate">
+				<div className="heading show-products-list">
 					<h5>Find Your Beauty Match</h5>
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>
 				</div>
@@ -117,7 +117,7 @@ export default function Home({ products }) {
 			</section>
 
 			{/* Testimonies */}
-			<section className="testimonies">
+			<section className="testimonies will-animate">
 				<div className="heading">
 					<h5>What The Customers Say</h5>
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>

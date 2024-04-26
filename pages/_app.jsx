@@ -38,7 +38,7 @@ export default function App({
 					property="og:description"
 					content="E-Commerce App. Project of Numo Francis, an expert Frontend Developer in crafting software solutions that address unique challenges and measurably impact the bottom line."
 				/>
-				<meta property="og:image" content="/public/images/ogelegante.png" />
+				<meta property="og:image" content="/images/ogelegante.png" />
 				<meta property="og:image:width" content="1600" />
 				<meta property="og:image:height" content="237" />
 

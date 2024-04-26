@@ -7,6 +7,7 @@ import Image from 'next/image';
  * Internal dependencies
  */
 import { Button } from '.';
+import { icons } from '../utils';
 
 export default () => (
 	<section className="subscribe will-animate">
@@ -20,7 +21,10 @@ export default () => (
 					placeholder="Your email address"
 					className="outlined-input"
 				/>
-				<Button variant="link-button">SUBMIT</Button>
+				<Button variant="link-button">
+					SUBMIT
+					{icons.arrowLight}
+				</Button>
 			</div>
 
 			<div className="image-container">

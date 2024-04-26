@@ -113,7 +113,9 @@ export default function Home({ products }) {
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>
 				</div>
 
-				<ProductsList products={products.slice(0, 8)} />
+				<div className="lp-product-list will-animate">
+					<ProductsList products={products.slice(0, 8)} />
+				</div>
 			</section>
 
 			{/* Testimonies */}

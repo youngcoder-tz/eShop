@@ -65,7 +65,8 @@ body {
 		}
 	}
 
-	&.products-list {
+	.lp-product-list .products-list,
+	.products-list {
 		animation-delay: 200ms;
 		animation-timing-function: cubic-bezier(.165,.84,.44,1);
 		animation-name: AuxFadeInUp;

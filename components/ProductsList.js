@@ -25,7 +25,7 @@ export default ({ products = [] }) => {
 
 	return (
 		<>
-			<div id="products-list" className="products-list will-animate">
+			<div id="products-list" className="products-list">
 				{products.map((item, index) => {
 					const {
 						image,

@@ -107,7 +107,7 @@ export default function Home({ products }) {
 			</section>
 
 			{/* Products */}
-			<section className="will-animate">
+			<section>
 				<div className="heading show-products-list">
 					<h5>Find Your Beauty Match</h5>
 					<p>AT VERO EOS ET ACCUSAMUS ET IUSTO</p>

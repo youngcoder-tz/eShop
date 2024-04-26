@@ -26,29 +26,27 @@ export default function App({
 				<meta name="theme-color" content="#000000" />
 				<meta
 					name="description"
-					content="E-Commerce App. Project of Francis Numo. A Front-End Developer who specializes in building elegant user interface with the aim to create an exceptional digital experience"
+					content="E-Commerce App. Project of Numo Francis, an expert Frontend Developer in crafting software solutions that address unique challenges and measurably impact the bottom line."
 				/>
 				<meta
 					name="keywords"
-					content="Frontend Developer, Mobile Developer, Open Source, Freelance Web Developer, Freelance Mobile Developer, React Native Developer, Developer Portfolio, React Developer, Web Developer, React Frontend Developer"
+					content="Frontend Developer, Mobile Developer, Open Source, Freelance Web Developer, Freelance Mobile Developer, Javascript Developer, Developer Portfolio, React Developer, Web Developer, React Frontend Developer"
 				/>
 
-				<meta name="description" content="Page description" />
-				<meta property="og:title" content="Green Shop" />
+				<meta property="og:title" content="Eleganté Shop" />
 				<meta
 					property="og:description"
-					content="E-Commerce App. Project of Francis Numo. A Front-End Developer who specializes in building elegant user interface with the aim to create exceptional digital experience"
+					content="E-Commerce App. Project of Numo Francis, an expert Frontend Developer in crafting software solutions that address unique challenges and measurably impact the bottom line."
 				/>
-				<meta property="og:image" content="../public/images/shirt1.jpg" />
+				<meta property="og:image" content="../public/images/ogelegante.png" />
+				<meta property="og:image:width" content="1600" />
+				<meta property="og:image:height" content="237" />
 
-				<meta property="og:image:alt" content="Green Shop" />
+				<meta property="og:image:alt" content="Eleganté Shop" />
 				<meta property="og:locale" content="en_GB" />
 				<meta property="og:type" content="website" />
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta
-					property="og:url"
-					content="https://www.greenshopping.vercel.app/"
-				/>
+				<meta property="og:url" content="https://elegante-shop.vercel.app/" />
 				<meta name="twitter:card" content="summary" />
 				<meta name="theme-color" content="#000000" />
 				<meta name="robots" content="index, follow" />

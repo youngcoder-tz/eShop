@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { SlArrowDown } from 'react-icons/sl';
 
 /**
@@ -11,6 +11,7 @@ import { Button } from '.';
 
 export default ({ value, options = [], onChange = () => {} }) => {
 	const [showMenu, setShowMenu] = useState(false);
+	const selectRef = useRef();
 
 	const handleToggle = () => {
 		setShowMenu((prev) => !prev);
@@ -21,8 +22,22 @@ export default ({ value, options = [], onChange = () => {} }) => {
 		setShowMenu(false);
 	};
 
+	useEffect(() => {
+		const handleClickOutside = ({ target }) => {
+			if (target && selectRef.current && !selectRef.current.contains(target)) {
+				setShowMenu(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, []);
+
 	return (
-		<span className="relative">
+		<span className="relative" ref={selectRef}>
 			<Button
 				variant="select"
 				onClick={handleToggle}

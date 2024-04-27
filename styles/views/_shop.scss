@@ -67,6 +67,13 @@
 		line-height: 1.3em;
 		text-transform: uppercase;
 	}
+
+	.select {
+		+ ul {
+			top: auto;
+			bottom: 100%;
+		}
+	}
 }
 
 .filters {

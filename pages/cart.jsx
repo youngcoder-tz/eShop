@@ -81,7 +81,7 @@ function CartScreen() {
 						<table className="min-w-full mb-10">
 							<thead className="border uppercase">
 								<tr className="text-center ">
-									<th className="px-5 text-left  py-5">Item</th>
+									<th className="px-2 md:px-5 text-left py-5">Item</th>
 									<th>Quantity</th>
 									<th>Price</th>
 								</tr>
@@ -93,7 +93,7 @@ function CartScreen() {
 										className="text-center border text-sm md:text-lg"
 									>
 										<td className="text-left">
-											<div className="flex items-center p-5">
+											<div className="flex items-center px-2 md:px-5 py-5">
 												<button
 													type="button"
 													onClick={() => handleRemoveCartItem(item)}
@@ -104,7 +104,7 @@ function CartScreen() {
 
 												<Link
 													href={`/product/${item.slug}`}
-													className="flex items-center p-5 text-[#1bb0ce] hover:text-[#1691aa] font-semibold"
+													className="flex items-center p-5 pl-2 md:pl-5 text-[#1bb0ce] hover:text-[#1691aa] font-semibold"
 												>
 													<Image
 														src={item.image}

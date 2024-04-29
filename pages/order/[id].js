@@ -150,7 +150,7 @@ function OrderScreen({ orderId }) {
 					<table className="mb-10 checkout-table w-full">
 						<thead className="border uppercase">
 							<tr className="text-center ">
-								<th className="px-5 text-left  py-5">Item</th>
+								<th className="px-5 text-left  py-5 pl-3 sm:pl-5">Item</th>
 								<th>Price ($)</th>
 								<th>Subtotal ($)</th>
 							</tr>
@@ -164,14 +164,14 @@ function OrderScreen({ orderId }) {
 									<td className="text-left">
 										<Link
 											href={`/product/${item.slug}`}
-											className="flex flex-col sm:flex-row text-center sm:text-left items-center py-5 pl-5 text-[#1bb0ce] hover:text-[#1691aa] font-semibold gap-5"
+											className="flex flex-col sm:flex-row text-left sm:items-center py-5 pl-3 sm:pl-5 text-[#1bb0ce] hover:text-[#1691aa] font-semibold gap-5"
 										>
 											<Image
 												src={item.image}
 												alt={item.name}
 												width={150}
 												height={150}
-												className="inline-flex"
+												className="inline-flex w-[80px] h-auto md:w-[150px]"
 											/>
 
 											<p>

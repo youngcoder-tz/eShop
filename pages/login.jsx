@@ -62,6 +62,7 @@ export default function LoginScreen() {
 					type="email"
 					id="email"
 					className="contained-input"
+					defaultValue={'visitor@elegante.com'}
 				/>
 				{errors.email && displayError(errors.email.message)}
 
@@ -81,6 +82,7 @@ export default function LoginScreen() {
 					type="password"
 					id="password"
 					className="contained-input"
+					defaultValue={'123456'}
 				/>
 				{errors.password && displayError(errors.password.message)}
 

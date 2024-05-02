@@ -114,7 +114,7 @@ export default function Home({
 
 					<ul>
 						{categories.map((category) => (
-							<li>
+							<li key={category}>
 								<button onClick={() => categoryHandler(category)}>
 									{category}
 								</button>

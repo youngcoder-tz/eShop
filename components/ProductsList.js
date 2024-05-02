@@ -23,15 +23,6 @@ export default ({ products = [] }) => {
 		dispatch: dispatchFavorites,
 	} = useContext(Favorites);
 
-	function isTouchDevice() {
-		if (typeof window === 'undefined') return false;
-		return (
-			'ontouchstart' in window ||
-			navigator.maxTouchPoints > 0 ||
-			navigator.msMaxTouchPoints > 0
-		);
-	}
-
 	return (
 		<>
 			<div id="products-list" className="products-list">
@@ -49,20 +40,7 @@ export default ({ products = [] }) => {
 					return (
 						<div key={index} className="product">
 							<div className="product-img-preview">
-								<Link
-									href={`/product/${slug}`}
-									className={`img-container ${
-										isTouchDevice() ? 'show-actions' : ''
-									}`}
-									// onTouchStart={(e) => {
-									// 	e.preventDefault();
-									// }}
-									// onClick={(e) => {
-									// 	if (isTouchDevice()) {
-									// 		e.preventDefault();
-									// 	}
-									// }}
-								>
+								<Link href={`/product/${slug}`} className="img-container">
 									<Image src={image} width={315} height={325} alt={name} />
 
 									{discount && (

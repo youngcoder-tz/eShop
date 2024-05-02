@@ -54,11 +54,17 @@ export default ({ products = [] }) => {
 									onTouchStart={(e) => {
 										e.preventDefault();
 									}}
-									// onClick={(e) => {
-									// 	if (isTouchDevice()) {
-									// 		e.preventDefault();
-									// 	}
-									// }}
+									onClick={(e) => {
+										// if (isTouchDevice()) {
+										// 	e.preventDefault();
+										// }
+										if (!e.currentTarget.dataset.touch) {
+											e.preventDefault();
+											e.currentTarget.dataset.touch = true;
+										} else {
+											e.currentTarget.dataset.touch = false;
+										}
+									}}
 								>
 									<Image src={image} width={315} height={325} alt={name} />
 

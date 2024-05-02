@@ -3,7 +3,7 @@
  */
 import Link from 'next/link';
 import Image from 'next/image';
-import { Fragment, useState, useContext } from 'react';
+import { Fragment, useState, useContext, useEffect } from 'react';
 import { FaPlus, FaRegEye, FaRegHeart, FaHeart } from 'react-icons/fa';
 import { IconButton } from '@mui/material';
 
@@ -17,6 +17,7 @@ export default ({ products = [] }) => {
 	const { state, dispatch } = useContext(Store);
 	const [showPreview, setShowPreview] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
+	const [touchCount, setTouchCount] = useState({});
 
 	const {
 		state: { favorites },
@@ -30,6 +31,29 @@ export default ({ products = [] }) => {
 			navigator.msMaxTouchPoints > 0
 		);
 	}
+
+	const handleClick = (e) => {
+		if (isTouchDevice()) {
+			const linkId = e.currentTarget.dataset.linkId;
+			const currentCount = touchCount[linkId] || 0;
+			const newCount = currentCount + 1;
+			setTouchCount({ ...touchCount, [linkId]: newCount });
+			if (newCount === 1) {
+				e.preventDefault();
+			}
+		}
+	};
+
+	useEffect(() => {
+		const handleDocumentClick = () => {
+			// Reset touch count when clicking outside links
+			setTouchCount({});
+		};
+		document.body.addEventListener('click', handleDocumentClick);
+		return () => {
+			document.body.removeEventListener('click', handleDocumentClick);
+		};
+	}, []);
 
 	return (
 		<>
@@ -54,17 +78,19 @@ export default ({ products = [] }) => {
 									onTouchStart={(e) => {
 										e.preventDefault();
 									}}
-									onClick={(e) => {
-										// if (isTouchDevice()) {
-										// 	e.preventDefault();
-										// }
-										if (!e.currentTarget.dataset.touch) {
-											e.preventDefault();
-											e.currentTarget.dataset.touch = true;
-										} else {
-											e.currentTarget.dataset.touch = false;
-										}
-									}}
+									onClick={handleClick}
+									data-link-id={slug}
+									// onClick={(e) => {
+									// 	// if (isTouchDevice()) {
+									// 	// 	e.preventDefault();
+									// 	// }
+									// 	if (!e.currentTarget.dataset.touch) {
+									// 		e.preventDefault();
+									// 		e.currentTarget.dataset.touch = true;
+									// 	} else {
+									// 		e.currentTarget.dataset.touch = false;
+									// 	}
+									// }}
 								>
 									<Image src={image} width={315} height={325} alt={name} />
 

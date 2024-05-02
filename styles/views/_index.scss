@@ -776,11 +776,15 @@ img {
 				max-width: 100%;
 
 				z-index: 10;
+
+				img {
+					width: 90%;
+				}
 			}
 		}
 
 
-		@media (max-width: 767px) {
+		@media (max-width: 990px) {
 			.heading {
 				h3, h5 {
 					text-align: center;
@@ -792,7 +796,7 @@ img {
 			}
 		}
 
-		@media (min-width: 768px) {
+		@media (min-width: 991px) {
 			.heading {
 				margin: 0 0 0 50px;
 				align-items: start;
@@ -1187,7 +1191,6 @@ footer {
 
 	.product {
 		padding-bottom: 50px;
-		position: relative;
 		
 		max-width: 315px;
 		@apply mx-auto;
@@ -1196,6 +1199,10 @@ footer {
 		width: 100%;
 		padding-right: 15px;
 		padding-left: 15px;
+
+		.product-img-preview {
+			position: relative;
+		}
 
 		.img-container {
 			img {
@@ -1230,7 +1237,6 @@ footer {
 
 		.actions {
 			position: absolute;
-			top: 220px;
 			left: 50%;
 			transform: translateX(-50%);
 			display: flex;
@@ -1240,6 +1246,7 @@ footer {
 			gap: 20px;
 			transition: all .3s ease-in-out;
 			opacity: 0;
+			bottom: 15px;
 
 			button {
 				display: flex;
@@ -1259,11 +1266,17 @@ footer {
 
 			@media screen and (max-width: 768px ) {
 				opacity: 1;
-				top: 225px;
 
 				button {
 					min-width: 38px;
 					min-height: 38px;
+				}
+			}
+
+			@media screen and (max-width: 330px ) {
+				button {
+					min-width: 30px;
+					min-height: 30px;
 				}
 			}
 		}

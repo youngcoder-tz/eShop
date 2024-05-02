@@ -68,7 +68,7 @@ export default ({ item, setShowPreview }) => {
 								{category.map((item, index) => (
 									<>
 										<Link
-											key={item}
+											key={index}
 											href={`/shop?category=${item}`}
 											onClick={() => setShowPreview(false)}
 										>

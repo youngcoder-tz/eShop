@@ -17,7 +17,6 @@ export default ({ products = [] }) => {
 	const { state, dispatch } = useContext(Store);
 	const [showPreview, setShowPreview] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
-	const [touchCount, setTouchCount] = useState({});
 
 	const {
 		state: { favorites },
@@ -25,35 +24,13 @@ export default ({ products = [] }) => {
 	} = useContext(Favorites);
 
 	function isTouchDevice() {
+		if (typeof window === 'undefined') return false;
 		return (
 			'ontouchstart' in window ||
 			navigator.maxTouchPoints > 0 ||
 			navigator.msMaxTouchPoints > 0
 		);
 	}
-
-	const handleClick = (e) => {
-		if (isTouchDevice()) {
-			const linkId = e.currentTarget.dataset.linkId;
-			const currentCount = touchCount[linkId] || 0;
-			const newCount = currentCount + 1;
-			setTouchCount({ ...touchCount, [linkId]: newCount });
-			if (newCount === 1) {
-				e.preventDefault();
-			}
-		}
-	};
-
-	useEffect(() => {
-		const handleDocumentClick = () => {
-			// Reset touch count when clicking outside links
-			setTouchCount({});
-		};
-		document.body.addEventListener('click', handleDocumentClick);
-		return () => {
-			document.body.removeEventListener('click', handleDocumentClick);
-		};
-	}, []);
 
 	return (
 		<>
@@ -74,21 +51,15 @@ export default ({ products = [] }) => {
 							<div className="product-img-preview">
 								<Link
 									href={`/product/${slug}`}
-									className="img-container"
-									onTouchStart={(e) => {
-										e.preventDefault();
-									}}
-									onClick={handleClick}
-									data-link-id={slug}
+									className={`img-container ${
+										isTouchDevice() ? 'show-actions' : ''
+									}`}
+									// onTouchStart={(e) => {
+									// 	e.preventDefault();
+									// }}
 									// onClick={(e) => {
-									// 	// if (isTouchDevice()) {
-									// 	// 	e.preventDefault();
-									// 	// }
-									// 	if (!e.currentTarget.dataset.touch) {
+									// 	if (isTouchDevice()) {
 									// 		e.preventDefault();
-									// 		e.currentTarget.dataset.touch = true;
-									// 	} else {
-									// 		e.currentTarget.dataset.touch = false;
 									// 	}
 									// }}
 								>

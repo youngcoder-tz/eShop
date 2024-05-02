@@ -16,14 +16,20 @@ import { addToCart, Store, Favorites, ADD_TO_FAVORITES } from '../utils';
 export default ({ products = [] }) => {
 	const { state, dispatch } = useContext(Store);
 	const [showPreview, setShowPreview] = useState(false);
-	const [showActions, setShowActions] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
-	const [currentItemIndex, setCurrentItemIndex] = useState(null);
 
 	const {
 		state: { favorites },
 		dispatch: dispatchFavorites,
 	} = useContext(Favorites);
+
+	function isTouchDevice() {
+		return (
+			'ontouchstart' in window ||
+			navigator.maxTouchPoints > 0 ||
+			navigator.msMaxTouchPoints > 0
+		);
+	}
 
 	return (
 		<>
@@ -41,15 +47,19 @@ export default ({ products = [] }) => {
 
 					return (
 						<div key={index} className="product">
-							<div
-								className="product-img-preview"
-								onMouseEnter={() => {
-									setShowActions(true);
-									setCurrentItemIndex(index);
-								}}
-								onMouseLeave={() => setShowActions(false)}
-							>
-								<Link href={`/product/${slug}`} className="img-container">
+							<div className="product-img-preview">
+								<Link
+									href={`/product/${slug}`}
+									className="img-container"
+									onTouchStart={(e) => {
+										e.preventDefault();
+									}}
+									// onClick={(e) => {
+									// 	if (isTouchDevice()) {
+									// 		e.preventDefault();
+									// 	}
+									// }}
+								>
 									<Image src={image} width={315} height={325} alt={name} />
 
 									{discount && (
@@ -59,45 +69,43 @@ export default ({ products = [] }) => {
 									)}
 								</Link>
 
-								{showActions && currentItemIndex === index && (
-									<div className="actions">
-										<IconButton
-											onClick={() => {
-												setShowPreview(true);
-												setCurrentItem(item);
-											}}
-											title="Preview"
-											className="preview"
-										>
-											<FaRegEye />
-										</IconButton>
+								<div className="actions">
+									<IconButton
+										onClick={() => {
+											setShowPreview(true);
+											setCurrentItem(item);
+										}}
+										title="Preview"
+										className="preview"
+									>
+										<FaRegEye />
+									</IconButton>
 
-										<IconButton
-											onClick={() =>
-												dispatchFavorites({
-													type: ADD_TO_FAVORITES,
-													payload: item,
-												})
-											}
-											title="Add to Favorites"
-											className="favorite"
-										>
-											{favorites.find((favorite) => favorite.slug === slug) ? (
-												<FaHeart />
-											) : (
-												<FaRegHeart />
-											)}
-										</IconButton>
+									<IconButton
+										onClick={() =>
+											dispatchFavorites({
+												type: ADD_TO_FAVORITES,
+												payload: item,
+											})
+										}
+										title="Add to Favorites"
+										className="favorite"
+									>
+										{favorites.find((favorite) => favorite.slug === slug) ? (
+											<FaHeart />
+										) : (
+											<FaRegHeart />
+										)}
+									</IconButton>
 
-										<IconButton
-											title="Add to Cart"
-											className="cart"
-											onClick={() => addToCart(item, state, dispatch)}
-										>
-											<FaPlus />
-										</IconButton>
-									</div>
-								)}
+									<IconButton
+										title="Add to Cart"
+										className="cart"
+										onClick={() => addToCart(item, state, dispatch)}
+									>
+										<FaPlus />
+									</IconButton>
+								</div>
 							</div>
 
 							<div className="main">

@@ -139,11 +139,11 @@ export default function Home({
 								marks={[
 									{
 										value: minPrice,
-										label: '$' + minPrice,
+										label: '$' + selectedPrice[0],
 									},
 									{
 										value: maxPrice,
-										label: '$' + maxPrice,
+										label: '$' + selectedPrice[1],
 									},
 								]}
 							/>

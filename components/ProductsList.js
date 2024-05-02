@@ -16,7 +16,9 @@ import { addToCart, Store, Favorites, ADD_TO_FAVORITES } from '../utils';
 export default ({ products = [] }) => {
 	const { state, dispatch } = useContext(Store);
 	const [showPreview, setShowPreview] = useState(false);
+	const [showActions, setShowActions] = useState(false);
 	const [currentItem, setCurrentItem] = useState({});
+	const [currentItemIndex, setCurrentItemIndex] = useState(null);
 
 	const {
 		state: { favorites },
@@ -39,7 +41,14 @@ export default ({ products = [] }) => {
 
 					return (
 						<div key={index} className="product">
-							<div className="product-img-preview">
+							<div
+								className="product-img-preview"
+								onMouseEnter={() => {
+									setShowActions(true);
+									setCurrentItemIndex(index);
+								}}
+								onMouseLeave={() => setShowActions(false)}
+							>
 								<Link href={`/product/${slug}`} className="img-container">
 									<Image src={image} width={315} height={325} alt={name} />
 
@@ -50,43 +59,45 @@ export default ({ products = [] }) => {
 									)}
 								</Link>
 
-								<div className="actions">
-									<IconButton
-										onClick={() => {
-											setShowPreview(true);
-											setCurrentItem(item);
-										}}
-										title="Preview"
-										className="preview"
-									>
-										<FaRegEye />
-									</IconButton>
+								{showActions && currentItemIndex === index && (
+									<div className="actions">
+										<IconButton
+											onClick={() => {
+												setShowPreview(true);
+												setCurrentItem(item);
+											}}
+											title="Preview"
+											className="preview"
+										>
+											<FaRegEye />
+										</IconButton>
 
-									<IconButton
-										onClick={() =>
-											dispatchFavorites({
-												type: ADD_TO_FAVORITES,
-												payload: item,
-											})
-										}
-										title="Add to Favorites"
-										className="favorite"
-									>
-										{favorites.find((favorite) => favorite.slug === slug) ? (
-											<FaHeart />
-										) : (
-											<FaRegHeart />
-										)}
-									</IconButton>
+										<IconButton
+											onClick={() =>
+												dispatchFavorites({
+													type: ADD_TO_FAVORITES,
+													payload: item,
+												})
+											}
+											title="Add to Favorites"
+											className="favorite"
+										>
+											{favorites.find((favorite) => favorite.slug === slug) ? (
+												<FaHeart />
+											) : (
+												<FaRegHeart />
+											)}
+										</IconButton>
 
-									<IconButton
-										title="Add to Cart"
-										className="cart"
-										onClick={() => addToCart(item, state, dispatch)}
-									>
-										<FaPlus />
-									</IconButton>
-								</div>
+										<IconButton
+											title="Add to Cart"
+											className="cart"
+											onClick={() => addToCart(item, state, dispatch)}
+										>
+											<FaPlus />
+										</IconButton>
+									</div>
+								)}
 							</div>
 
 							<div className="main">

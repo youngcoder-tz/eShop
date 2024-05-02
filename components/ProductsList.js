@@ -50,7 +50,7 @@ export default ({ products = [] }) => {
 									)}
 								</Link>
 
-								<div className="actions">
+								<div className="actions backdrop-blur-md w-[80%]">
 									<IconButton
 										onClick={() => {
 											setShowPreview(true);

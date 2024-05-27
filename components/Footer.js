@@ -80,13 +80,13 @@ export default () => {
 					<p>© 2024 eleganté.</p>
 
 					<span className="social-links">
-						<Link href="">
+						<Link target='_blank' href="https://github.com/numofran6">
 							<FaGithub />
 						</Link>
-						<Link href="">
+						<Link target='_blank' href="https://linkedin.com/in/numofrancis">
 							<FaLinkedin />
 						</Link>
-						<Link href="">
+						<Link target='_blank' href="http://devnumo.vercel.app/">
 							<GiWorld />
 						</Link>
 					</span>

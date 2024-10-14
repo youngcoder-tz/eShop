@@ -62,7 +62,7 @@ export default function LoginScreen() {
 					type="email"
 					id="email"
 					className="contained-input"
-					defaultValue={'visitor@elegante.com'}
+					defaultValue={'visitor@jom-product-05.com'}
 				/>
 				{errors.email && displayError(errors.email.message)}
 

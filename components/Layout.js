@@ -31,7 +31,7 @@ export default ({ children, title }) => {
 	return (
 		<>
 			<Head>
-				<title>{title ? title + ' - eleganté' : 'eleganté'}</title>
+				<title>{title ? title + ' - jomShop' : 'jomShop'}</title>
 			</Head>
 
 			<ToastContainer

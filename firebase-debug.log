@@ -1,0 +1,129 @@
+[debug] [2024-10-14T21:43:27.062Z] ----------------------------------------------------------------------
+[debug] [2024-10-14T21:43:27.065Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2024-10-14T21:43:27.065Z] CLI Version:   13.22.0
+[debug] [2024-10-14T21:43:27.065Z] Platform:      linux
+[debug] [2024-10-14T21:43:27.065Z] Node Version:  v20.17.0
+[debug] [2024-10-14T21:43:27.065Z] Time:          Tue Oct 15 2024 00:43:27 GMT+0300 (East Africa Time)
+[debug] [2024-10-14T21:43:27.066Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-14T21:43:27.183Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-14T21:43:27.184Z] > authorizing via signed-in user (jomjoam0@gmail.com)
+[debug] [2024-10-14T21:43:27.184Z] [iam] checking project jom-project-05 for permissions ["firebase.projects.get"]
+[debug] [2024-10-14T21:43:27.185Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:27.185Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:27.186Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions [none]
+[debug] [2024-10-14T21:43:27.186Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions x-goog-quota-user=projects/jom-project-05
+[debug] [2024-10-14T21:43:27.187Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-14T21:43:28.126Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions 200
+[debug] [2024-10-14T21:43:28.127Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-14T21:43:28.127Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:28.127Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:28.128Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 [none]
+[debug] [2024-10-14T21:43:28.894Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 200
+[debug] [2024-10-14T21:43:28.894Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 {"projectId":"jom-project-05","projectNumber":"919803116216","displayName":"jom-project-05","name":"projects/jom-project-05","resources":{"hostingSite":"jom-project-05"},"state":"ACTIVE","etag":"1_264ff1c9-93e9-4b72-b1b9-09dfca29bd03"}
+[info] 
+[info] === Serving from '/home/jom/elegante-shop'...
+[info] 
+[debug] [2024-10-14T21:43:28.905Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:28.906Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:28.915Z] defaultcredentials: writing to file /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json
+[debug] [2024-10-14T21:43:28.918Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jom-project-05/sites 
+[debug] [2024-10-14T21:43:28.928Z] Setting GAC to /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json"}}
+[debug] [2024-10-14T21:43:28.930Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:28.931Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:43:28.931Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig [none]
+[debug] [2024-10-14T21:43:29.355Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig 200
+[debug] [2024-10-14T21:43:29.356Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig {"projectId":"jom-project-05","storageBucket":"jom-project-05.appspot.com"}
+[debug] [2024-10-14T21:43:29.424Z] Error: listen EADDRINUSE: address already in use 127.0.0.1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2135:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-14T21:46:38.805Z] ----------------------------------------------------------------------
+[debug] [2024-10-14T21:46:38.808Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2024-10-14T21:46:38.809Z] CLI Version:   13.22.0
+[debug] [2024-10-14T21:46:38.809Z] Platform:      linux
+[debug] [2024-10-14T21:46:38.809Z] Node Version:  v20.17.0
+[debug] [2024-10-14T21:46:38.809Z] Time:          Tue Oct 15 2024 00:46:38 GMT+0300 (East Africa Time)
+[debug] [2024-10-14T21:46:38.810Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-14T21:46:39.017Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-14T21:46:39.017Z] > authorizing via signed-in user (jomjoam0@gmail.com)
+[debug] [2024-10-14T21:46:39.017Z] [iam] checking project jom-project-05 for permissions ["firebase.projects.get"]
+[debug] [2024-10-14T21:46:39.018Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:39.018Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:39.020Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions [none]
+[debug] [2024-10-14T21:46:39.020Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions x-goog-quota-user=projects/jom-project-05
+[debug] [2024-10-14T21:46:39.020Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-14T21:46:40.069Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions 200
+[debug] [2024-10-14T21:46:40.069Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-14T21:46:40.070Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:40.070Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:40.070Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 [none]
+[debug] [2024-10-14T21:46:41.251Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 200
+[debug] [2024-10-14T21:46:41.252Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 {"projectId":"jom-project-05","projectNumber":"919803116216","displayName":"jom-project-05","name":"projects/jom-project-05","resources":{"hostingSite":"jom-project-05"},"state":"ACTIVE","etag":"1_264ff1c9-93e9-4b72-b1b9-09dfca29bd03"}
+[info] 
+[info] === Serving from '/home/jom/elegante-shop'...
+[info] 
+[debug] [2024-10-14T21:46:41.262Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:41.262Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:41.295Z] defaultcredentials: writing to file /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json
+[debug] [2024-10-14T21:46:41.297Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jom-project-05/sites 
+[debug] [2024-10-14T21:46:41.314Z] Setting GAC to /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json"}}
+[debug] [2024-10-14T21:46:41.316Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:41.316Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:46:41.316Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig [none]
+[debug] [2024-10-14T21:46:41.674Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig 200
+[debug] [2024-10-14T21:46:41.674Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig {"projectId":"jom-project-05","storageBucket":"jom-project-05.appspot.com"}
+[debug] [2024-10-14T21:46:41.744Z] Error: listen EADDRINUSE: address already in use 127.0.0.1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2135:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8)
+[error] 
+[error] Error: An unexpected error has occurred.
+[debug] [2024-10-14T21:47:59.488Z] ----------------------------------------------------------------------
+[debug] [2024-10-14T21:47:59.490Z] Command:       /usr/bin/node /usr/bin/firebase serve
+[debug] [2024-10-14T21:47:59.491Z] CLI Version:   13.22.0
+[debug] [2024-10-14T21:47:59.491Z] Platform:      linux
+[debug] [2024-10-14T21:47:59.491Z] Node Version:  v20.17.0
+[debug] [2024-10-14T21:47:59.491Z] Time:          Tue Oct 15 2024 00:47:59 GMT+0300 (East Africa Time)
+[debug] [2024-10-14T21:47:59.491Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2024-10-14T21:47:59.630Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2024-10-14T21:47:59.631Z] > authorizing via signed-in user (jomjoam0@gmail.com)
+[debug] [2024-10-14T21:47:59.631Z] [iam] checking project jom-project-05 for permissions ["firebase.projects.get"]
+[debug] [2024-10-14T21:47:59.632Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:47:59.632Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:47:59.633Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions [none]
+[debug] [2024-10-14T21:47:59.633Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions x-goog-quota-user=projects/jom-project-05
+[debug] [2024-10-14T21:47:59.634Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-14T21:48:01.329Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions 200
+[debug] [2024-10-14T21:48:01.330Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/jom-project-05:testIamPermissions {"permissions":["firebase.projects.get"]}
+[debug] [2024-10-14T21:48:01.331Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:48:01.331Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:48:01.332Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 [none]
+[debug] [2024-10-14T21:48:02.588Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 200
+[debug] [2024-10-14T21:48:02.588Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05 {"projectId":"jom-project-05","projectNumber":"919803116216","displayName":"jom-project-05","name":"projects/jom-project-05","resources":{"hostingSite":"jom-project-05"},"state":"ACTIVE","etag":"1_264ff1c9-93e9-4b72-b1b9-09dfca29bd03"}
+[info] 
+[info] === Serving from '/home/jom/elegante-shop'...
+[info] 
+[debug] [2024-10-14T21:48:02.600Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:48:02.600Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:48:02.609Z] defaultcredentials: writing to file /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json
+[debug] [2024-10-14T21:48:02.612Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/jom-project-05/sites 
+[debug] [2024-10-14T21:48:02.623Z] Setting GAC to /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json {"metadata":{"emulator":{"name":"functions"},"message":"Setting GAC to /home/jom/.config/firebase/jomjoam0_gmail_com_application_default_credentials.json"}}
+[debug] [2024-10-14T21:48:02.627Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:48:02.627Z] Checked if tokens are valid: true, expires at: 1728943535273
+[debug] [2024-10-14T21:48:02.628Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig [none]
+[debug] [2024-10-14T21:48:03.030Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig 200
+[debug] [2024-10-14T21:48:03.031Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/jom-project-05/adminSdkConfig {"projectId":"jom-project-05","storageBucket":"jom-project-05.appspot.com"}
+[debug] [2024-10-14T21:48:03.106Z] Error: listen EADDRINUSE: address already in use 127.0.0.1:5001
+    at Server.setupListenHandle [as _listen2] (node:net:1904:16)
+    at listenInCluster (node:net:1961:12)
+    at GetAddrInfoReqWrap.doListen [as callback] (node:net:2135:7)
+    at GetAddrInfoReqWrap.onlookup [as oncomplete] (node:dns:111:8)
+[error] 
+[error] Error: An unexpected error has occurred.

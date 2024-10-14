@@ -72,7 +72,7 @@ export default function App({
 					rel="stylesheet"
 				/>
 
-				<title>eleganté</title>
+				<title>JomShop</title>
 			</Head>
 
 			<SessionProvider session={session}>

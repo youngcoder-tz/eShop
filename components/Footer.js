@@ -41,7 +41,7 @@ export default () => {
 				<Subscribe />
 				<div className="main">
 					<div className="info">
-						<h1 className="elegante">eleganté</h1>
+						<h1 className="elegante">jom-product05</h1>
 						<div>
 							<p>
 								There Are Many Variations Passages Of Lorem Ipsum Available, But
@@ -53,8 +53,8 @@ export default () => {
 					<div className="contact">
 						<h1>Contact</h1>
 						<div>
-							<p>+233 53 446 7527</p>
-							<p>numofran6@gmail.com</p>
+							<p>+255 738 370 786</p>
+							<p>jomirish0@gmail.com</p>
 						</div>
 					</div>
 					<div className="quick-links">
@@ -77,16 +77,16 @@ export default () => {
 				</div>
 
 				<div className="floor">
-					<p>© 2024 eleganté.</p>
+					<p>© 2024 Jom Irish.</p>
 
 					<span className="social-links">
-						<Link target='_blank' href="https://github.com/numofran6">
+						<Link target='_blank' href="https://github.com/">
 							<FaGithub />
 						</Link>
-						<Link target='_blank' href="https://linkedin.com/in/numofrancis">
+						<Link target='_blank' href="https://linkedin.com/in/">
 							<FaLinkedin />
 						</Link>
-						<Link target='_blank' href="http://devnumo.vercel.app/">
+						<Link target='_blank' href="/">
 							<GiWorld />
 						</Link>
 					</span>

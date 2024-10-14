@@ -11,6 +11,8 @@ import { icons, db } from '../utils';
 import Product from '../models/Product';
 import { ProductsList, Layout } from '../components';
 
+
+
 export default function Home({ products }) {
 	return (
 		<Layout title={'HOME'}>
